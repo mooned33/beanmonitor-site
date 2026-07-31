@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BeanMonitor — The control tower for specialty coffee</title>
+<meta name="description" content="Independent daily market intelligence for roasters and green coffee buyers. Prices in context, origin weather vs 7-year normals, a structured Cup of Excellence auction database, and bias-tagged industry press — written natively in your language.">
+<meta property="og:title" content="BeanMonitor — The control tower for specialty coffee">
+<meta property="og:description" content="Independent daily brief: prices, origin weather, auctions, press. We don't sell coffee — we read the market for those who buy it.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://beanmonitor.coffee">
+<link rel="canonical" href="https://beanmonitor.coffee">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cellipse cx='16' cy='16' rx='11' ry='14' fill='%2379A15C' transform='rotate(18 16 16)'/%3E%3Cpath d='M16 4 C13 10 19 22 16 28' stroke='%230E1310' stroke-width='2.6' fill='none' transform='rotate(18 16 16)'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&family=IBM+Plex+Mono:wght@400;500;600&family=Noto+Sans+JP:wght@400;700&family=Noto+Sans+KR:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0E1310; --bg2:#121A15;
+  --ink:#ECE8DD; --paper:#EFEBDF; --paper2:#E6E1D2; --ink-on-paper:#171D18;
+  --jade:#79A15C; --jade-bright:#9CC77A; --amber:#C98A3D; --red:#C96A5A;
+  --muted:#9AA096; --muted-paper:#5E6458;
+  --line:rgba(236,232,221,.14); --line-paper:rgba(23,29,24,.16);
+  --field:#161E18;
+  --maxw:1120px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:"Archivo",system-ui,sans-serif;
+  font-variation-settings:"wdth" 100;font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body[data-lang="ja"]{font-family:"Noto Sans JP","Archivo",sans-serif}
+body[data-lang="ko"]{font-family:"Noto Sans KR","Archivo",sans-serif}
+body[data-lang="ja"] h1,body[data-lang="ja"] h2,body[data-lang="ko"] h1,body[data-lang="ko"] h2{
+  font-family:inherit;font-weight:700;letter-spacing:0;text-transform:none}
+#beans{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none;opacity:.85}
+nav,header,section,.tape,.agent,footer{position:relative;z-index:1}
+.mono{font-family:"IBM Plex Mono",monospace}
+a{color:inherit}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+.eyebrow{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--jade)}
+.band-paper .eyebrow{color:#4C7A38}
+h1,h2{font-family:"Archivo",sans-serif;font-variation-settings:"wdth" 122;font-weight:800;line-height:1.03;letter-spacing:-.01em;text-transform:uppercase}
+h2{font-size:clamp(28px,4.4vw,44px);margin:14px 0 18px}
+h3{font-weight:700;font-size:19px}
+p.lead{font-size:clamp(16px,1.9vw,19px);color:var(--muted);max-width:58ch}
+.band-paper p.lead{color:var(--muted-paper)}
+section{padding:88px 0}
+.band-paper{background:var(--paper);color:var(--ink-on-paper);position:relative;z-index:1}
+.band-paper h2{color:var(--ink-on-paper)}
+
+nav{position:sticky;top:0;z-index:50;background:rgba(14,19,16,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;gap:22px;height:60px}
+.logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-family:"IBM Plex Mono",monospace;font-weight:600;letter-spacing:.14em;font-size:14px;white-space:nowrap}
+.logo svg{width:22px;height:22px}
+.nav-links{display:flex;gap:20px;margin-left:auto;font-size:14px;align-items:center}
+.nav-links a{text-decoration:none;color:var(--muted)}
+.nav-links a:hover{color:var(--ink)}
+.lang-pick{font-family:"IBM Plex Mono",monospace;font-size:12.5px;background:var(--field);color:var(--ink);
+  border:1px solid var(--line);border-radius:6px;padding:7px 9px;cursor:pointer}
+.lang-pick option{color:#171D18;background:#fff}
+.nav-cta{font-family:"IBM Plex Mono",monospace;font-size:13px;border:1px solid var(--jade);color:var(--jade-bright);
+  background:var(--field);padding:8px 14px;border-radius:6px;text-decoration:none;white-space:nowrap}
+.nav-cta:hover{background:var(--jade);color:var(--bg)}
+@media(max-width:820px){.nav-links a:not(.nav-cta){display:none}}
+
+.hero{position:relative;overflow:hidden;padding:104px 0 80px}
+#isobars{position:absolute;inset:0;width:100%;height:100%;opacity:1}
+.hero::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+  background:radial-gradient(120% 90% at 18% 45%, rgba(14,19,16,.96) 0%, rgba(14,19,16,.86) 38%, rgba(14,19,16,.45) 68%, rgba(14,19,16,0) 100%)}
+.hero-in{position:relative;z-index:2;max-width:840px}
+.hero h1{font-size:clamp(38px,6.8vw,80px);margin:18px 0 20px}
+.hero h1 .g{color:var(--jade-bright)}
+.founder-chip{display:inline-flex;align-items:center;gap:10px;margin-top:26px;font-family:"IBM Plex Mono",monospace;
+  font-size:13px;border:1px solid rgba(201,138,61,.55);color:var(--amber);padding:9px 15px;border-radius:999px;background:rgba(30,22,12,.9)}
+
+.signup{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px;max-width:660px}
+.signup input[type=email],.signup select{font-family:"IBM Plex Mono",monospace;font-size:15px;color:var(--ink);
+  background:var(--field);border:1px solid rgba(236,232,221,.26);border-radius:8px;padding:14px 16px}
+.signup input[type=email]{flex:1 1 240px;min-width:0}
+.signup input::placeholder{color:#7C8479}
+.signup select{flex:0 0 auto;cursor:pointer}
+.signup select option{color:#171D18;background:#fff}
+.signup button{font-family:"IBM Plex Mono",monospace;font-size:15px;font-weight:600;background:var(--jade);
+  color:#0B0F0C;border:none;border-radius:8px;padding:14px 22px;cursor:pointer;flex:0 0 auto}
+.signup button:hover{background:var(--jade-bright)}
+.signup-note{margin-top:12px;font-size:13px;color:var(--muted);background:rgba(14,19,16,.85);display:inline-block;padding:3px 8px;border-radius:5px}
+.sitelang{margin-top:20px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted);
+  background:rgba(14,19,16,.85);display:inline-flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 12px;border-radius:8px;border:1px solid var(--line)}
+.sitelang button{font-family:inherit;font-size:12.5px;background:none;border:1px solid transparent;color:var(--muted);
+  padding:3px 8px;border-radius:5px;cursor:pointer}
+.sitelang button:hover{color:var(--ink)}
+.sitelang button[aria-current="true"]{color:var(--jade-bright);border-color:var(--jade)}
+:focus-visible{outline:2px solid var(--jade-bright);outline-offset:2px}
+
+.tape{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);overflow:hidden;padding:13px 0;position:relative}
+.tape-label{position:absolute;left:0;top:0;bottom:0;z-index:2;display:flex;align-items:center;padding:0 14px;
+  background:var(--bg2);border-right:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:11px;letter-spacing:.16em;color:var(--muted);line-height:1.2}
+.tape-track{display:flex;width:max-content;animation:tape 46s linear infinite}
+.tape:hover .tape-track{animation-play-state:paused}
+.tape-item{font-family:"IBM Plex Mono",monospace;font-size:13.5px;white-space:nowrap;padding:0 26px;border-right:1px solid var(--line)}
+.tape-item .up{color:var(--jade-bright)} .tape-item .dn{color:var(--red)} .tape-item .dim{color:var(--muted)}
+@keyframes tape{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.tape-track{animation:none;flex-wrap:wrap}html{scroll-behavior:auto}}
+
+.sheet{border:1px solid var(--line-paper);border-radius:12px;overflow:hidden;background:var(--paper)}
+.sheet-row{display:grid;grid-template-columns:130px 1.05fr 1.6fr;border-top:1px solid var(--line-paper)}
+.sheet-row:first-child{border-top:none}
+.sheet-cell{padding:22px 24px}
+.sheet-stamp{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:#4C7A38;
+  border-right:1px solid var(--line-paper);display:flex;align-items:flex-start;text-transform:uppercase;background:var(--paper2)}
+.sheet-title{font-weight:700;font-size:18px;border-right:1px solid var(--line-paper)}
+.sheet-title small{display:block;font-family:"IBM Plex Mono",monospace;font-weight:500;font-size:12.5px;color:var(--muted-paper);margin-top:6px}
+.sheet-desc{font-size:15.5px;color:#3A4038}
+@media(max-width:760px){.sheet-row{grid-template-columns:1fr}.sheet-stamp,.sheet-title{border-right:none;border-bottom:1px solid var(--line-paper)}}
+
+.sample{display:grid;grid-template-columns:1.05fr 1.4fr;gap:48px;align-items:start}
+@media(max-width:900px){.sample{grid-template-columns:1fr}}
+.email-mock{background:#141B16;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:0 30px 80px rgba(0,0,0,.5)}
+.email-head{display:flex;align-items:center;gap:10px;padding:14px 18px;border-bottom:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--muted)}
+.email-dot{width:9px;height:9px;border-radius:50%;background:var(--jade);flex:0 0 auto}
+.email-body{padding:22px 24px;font-size:14.5px;line-height:1.65}
+.email-body h4{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--jade-bright);margin:18px 0 8px}
+.email-body h4:first-child{margin-top:0}
+.email-body .tagv{color:var(--amber)} .email-body .tage{color:var(--jade-bright)}
+.email-foot{padding:12px 24px 18px;border-top:1px solid var(--line);font-family:"IBM Plex Mono",monospace;font-size:11.5px;color:var(--muted)}
+
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+@media(max-width:820px){.steps{grid-template-columns:1fr}}
+.step{border:1px solid var(--line-paper);border-radius:12px;padding:24px;background:var(--paper)}
+.step .t{font-family:"IBM Plex Mono",monospace;font-size:12px;letter-spacing:.14em;color:#4C7A38;text-transform:uppercase}
+.step h3{margin:10px 0 8px}
+.step p{font-size:15px;color:#3A4038}
+
+.agent{border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg2);padding:34px 0}
+.agent-in{display:flex;flex-wrap:wrap;align-items:center;gap:16px 32px}
+.agent-in .mono{font-size:14px;color:var(--muted)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip{font-family:"IBM Plex Mono",monospace;font-size:12.5px;border:1px solid var(--line);border-radius:6px;padding:6px 10px;color:var(--jade-bright)}
+
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:44px;align-items:stretch}
+@media(max-width:900px){.plans{grid-template-columns:1fr;max-width:460px}}
+.plan{border:1px solid var(--line-paper);border-radius:14px;padding:28px;background:var(--paper);display:flex;flex-direction:column}
+.plan.pro{border:2px solid var(--amber);position:relative;background:#F4EFE2}
+.plan .name{font-family:"IBM Plex Mono",monospace;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted-paper)}
+.plan .price{font-size:40px;font-weight:800;margin:12px 0 2px;font-variation-settings:"wdth" 116}
+.plan .price small{font-size:15px;font-weight:500;color:var(--muted-paper)}
+.plan .strike{font-size:17px;color:var(--muted-paper);text-decoration:line-through;font-weight:600;margin-left:8px}
+.plan ul{list-style:none;margin:18px 0 24px;display:grid;gap:10px;font-size:15px;color:#3A4038}
+.plan li::before{content:"— ";color:#4C7A38}
+.plan .cta{margin-top:auto;text-align:center;text-decoration:none;border-radius:8px;padding:13px 14px;
+  font-family:"IBM Plex Mono",monospace;font-size:14px;font-weight:600;border:1px solid var(--line-paper);color:var(--ink-on-paper)}
+.plan.pro .cta{background:var(--amber);border-color:var(--amber);color:#20150A}
+.plan.pro .cta:hover{filter:brightness(1.07)}
+.founder-tag{position:absolute;top:-13px;left:24px;background:var(--amber);color:#20150A;font-family:"IBM Plex Mono",monospace;
+  font-size:11.5px;letter-spacing:.1em;padding:5px 10px;border-radius:6px;font-weight:600}
+.locked{font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:#8A5E23;margin-top:4px}
+.guarantee{margin-top:22px;font-size:13.5px;color:var(--muted-paper);font-family:"IBM Plex Mono",monospace}
+
+.sponsor{border:1px dashed var(--line);border-radius:14px;padding:34px;display:flex;flex-wrap:wrap;gap:20px;
+  align-items:center;justify-content:space-between;background:rgba(18,26,21,.72)}
+.sponsor p{max-width:52ch;color:var(--muted);font-size:15px}
+.sponsor a{color:var(--jade-bright)}
+
+.faq{max-width:820px}
+.faq details{border-top:1px solid var(--line-paper);padding:6px 0}
+.faq details:last-child{border-bottom:1px solid var(--line-paper)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:16px;padding:16px 4px;font-weight:700;font-size:16.5px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-family:"IBM Plex Mono",monospace;color:#4C7A38;font-size:20px;line-height:1}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 4px 18px;color:#3A4038;font-size:15.5px;max-width:68ch}
+
+footer{border-top:1px solid var(--line);padding:44px 0 60px;font-size:14px;color:var(--muted)}
+.foot-in{display:flex;flex-wrap:wrap;gap:20px 40px;justify-content:space-between;align-items:flex-start}
+.foot-links{display:flex;gap:18px;flex-wrap:wrap;font-family:"IBM Plex Mono",monospace;font-size:12.5px}
+.foot-links span{opacity:.55}
+.independence{margin-top:18px;font-family:"IBM Plex Mono",monospace;font-size:12.5px;color:var(--jade)}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s ease, transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.reveal{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body data-lang="en">
+<canvas id="beans" aria-hidden="true"></canvas>
+
+<nav>
+  <div class="wrap nav-in">
+    <a class="logo" href="#top" aria-label="BeanMonitor home">
+      <svg viewBox="0 0 32 32" aria-hidden="true"><ellipse cx="16" cy="16" rx="11" ry="14" fill="#79A15C" transform="rotate(18 16 16)"/><path d="M16 4 C13 10 19 22 16 28" stroke="#0E1310" stroke-width="2.6" fill="none" transform="rotate(18 16 16)"/></svg>
+      BEAN·MONITOR
+    </a>
+    <div class="nav-links">
+      <a href="#signals" data-i18n="nav.signals">Signals</a>
+      <a href="#sample" data-i18n="nav.sample">Sample</a>
+      <a href="#pricing" data-i18n="nav.pricing">Pricing</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      <select class="lang-pick" id="lang-nav" aria-label="Site language">
+        <option value="en">EN</option><option value="fr">FR</option><option value="es">ES</option>
+        <option value="pt">PT</option><option value="ja">日本語</option><option value="ko">한국어</option>
+      </select>
+      <a class="nav-cta" href="#top" data-i18n="nav.cta">Get the brief</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <canvas id="isobars" aria-hidden="true"></canvas>
+  <div class="wrap hero-in">
+    <div class="eyebrow" data-i18n="hero.eyebrow">Independent · Daily · Written natively in your language</div>
+    <h1><span data-i18n="hero.h1a">The control tower for</span> <span class="g" data-i18n="hero.h1b">specialty coffee.</span></h1>
+    <p class="lead" data-i18n="hero.lead">Prices in 52-week context, origin weather against 7-year normals, a structured Cup of Excellence auction database and bias-tagged industry press — read, connected and written up by 7:00, for the people who buy green coffee.</p>
+
+    <form class="signup" id="signup" action="https://buttondown.com/api/emails/embed-subscribe/beanmonitor" method="post" target="_blank">
+      <input type="email" name="email" required placeholder="you@roastery.com" data-i18n-ph="hero.ph" aria-label="Email address">
+      <select name="metadata__language" id="brief-lang" aria-label="Brief language">
+        <option value="en">English</option><option value="fr">Français</option><option value="es">Español</option>
+        <option value="pt">Português</option><option value="ja">日本語</option><option value="ko">한국어</option>
+      </select>
+      <input type="hidden" name="embed" value="1">
+      <button type="submit" data-i18n="hero.btn">Get the free brief</button>
+    </form>
+    <p class="signup-note mono" data-i18n="hero.note">Free weekly edition, forever. No card. Unsubscribe anytime.</p>
+
+    <div class="sitelang">
+      <span data-i18n="hero.readin">Read this page in</span>
+      <button type="button" data-setlang="en" aria-current="true">English</button>
+      <button type="button" data-setlang="fr">Français</button>
+      <button type="button" data-setlang="es">Español</button>
+      <button type="button" data-setlang="pt">Português</button>
+      <button type="button" data-setlang="ja">日本語</button>
+      <button type="button" data-setlang="ko">한국어</button>
+    </div>
+
+    <div class="founder-chip"><span data-i18n="hero.chip">FOUNDING SEATS · Daily Pro at $19/mo locked for life for the first 49 — then $29</span></div>
+  </div>
+</header>
+
+<div class="tape" aria-label="Latest market readings">
+  <div class="tape-label" data-i18n="tape.label">LATEST<br>READINGS</div>
+  <div class="tape-track" id="tape-track">
+    <span class="tape-item">ARABICA ICE-C <b>335.9¢/lb</b> <span class="up">▲ +3.1% 24h</span> <span class="dim">· 52w pctile 52</span></span>
+    <span class="tape-item">COCOA ICE-NY <b>$5,223/t</b> <span class="up">▲ +0.7%</span></span>
+    <span class="tape-item">USD/BRL <b>5.10</b> <span class="dim">· pctile 18 → strong real</span></span>
+    <span class="tape-item">MINAS GERAIS RAIN 7D <b>17.8mm</b> <span class="dn">1978% of normal</span></span>
+    <span class="tape-item">DAK LAK RAIN 7D <b>100.8mm</b> <span class="dim">174% of normal</span></span>
+    <span class="tape-item">COE AUCTION DB <b>196 lots</b> <span class="dim">· 2026 season</span></span>
+    <span class="tape-item">TOP LOT <b>$547.62/lb</b> <span class="dim">· Peña Blanca, Mexico COE</span></span>
+    <span class="tape-item">EL INJERTO I <b>$449.10/lb</b> <span class="dim">· Geisha natural 91.86</span></span>
+  </div>
+</div>
+
+<section class="band-paper" id="signals">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="sig.eyebrow">What we watch</div>
+    <h2 data-i18n="sig.h2">Four signals, one grading sheet</h2>
+    <p class="lead" data-i18n="sig.lead">Every number below is live in the system today — not a promise on a roadmap.</p>
+    <div class="sheet" style="margin-top:36px">
+      <div class="sheet-row">
+        <div class="sheet-cell sheet-stamp" data-i18n="sig.s1.stamp">Prices</div>
+        <div class="sheet-cell sheet-title"><span data-i18n="sig.s1.title">Context, not just quotes</span><small data-i18n="sig.s1.sub">ICE Arabica · Cocoa · USD/BRL</small></div>
+        <div class="sheet-cell sheet-desc" data-i18n="sig.s1.desc">Every price arrives with its 24h and 30-day move and its position in the 52-week range — so "335.9¢" reads as "52nd percentile of its year", not a naked number.</div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-cell sheet-stamp" data-i18n="sig.s2.stamp">Weather</div>
+        <div class="sheet-cell sheet-title"><span data-i18n="sig.s2.title">Origins vs 7-year normals</span><small data-i18n="sig.s2.sub">9 GPS points · 4 producing regions</small></div>
+        <div class="sheet-cell sheet-desc" data-i18n="sig.s2.desc">Raw millimetres lie. We compare each week's rain to the seasonal normal — which is how the system flagged Minas Gerais at 1978% of normal during harvest, the same week the professionals did.</div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-cell sheet-stamp" data-i18n="sig.s3.stamp">Auctions</div>
+        <div class="sheet-cell sheet-title"><span data-i18n="sig.s3.title">A structured COE database</span><small data-i18n="sig.s3.sub">196 lots and counting · 10 origins tracked daily</small></div>
+        <div class="sheet-cell sheet-desc" data-i18n="sig.s3.desc">Farm, variety, process, score, final bid, buyer — every Cup of Excellence adjudication captured as data, with new results flagged the morning they land. Nobody else publishes this as a database.</div>
+      </div>
+      <div class="sheet-row">
+        <div class="sheet-cell sheet-stamp" data-i18n="sig.s4.stamp">Press</div>
+        <div class="sheet-cell sheet-title"><span data-i18n="sig.s4.title">Bias-tagged industry news</span><small data-i18n="sig.s4.sub">8 sources, ranked by relevance</small></div>
+        <div class="sheet-cell sheet-desc" data-i18n="sig.s4.desc">When an importer who sells coffee tells you to "book before September", we pass it on — labelled as an interested source. Culture pieces get filtered out; market signal gets through.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="sample">
+  <div class="wrap sample">
+    <div>
+      <div class="eyebrow" data-i18n="smp.eyebrow">The daily brief</div>
+      <h2 data-i18n="smp.h2">90 seconds, then back to roasting</h2>
+      <p class="lead" data-i18n="smp.lead">One email at 7:00. Market line, weather alerts, fresh auction results, the news that matters — and one paragraph on what it means for your buying. Written directly from the data in your language by an AI analyst, under standing interpretation rules, reviewed by a human editor.</p>
+      <p class="lead" style="margin-top:14px" data-i18n="smp.lead2">Excerpt from a real edition →</p>
+    </div>
+    <div class="email-mock" aria-label="Sample daily brief email">
+      <div class="email-head"><span class="email-dot"></span> <span data-i18n="smp.head">BeanMonitor daily — Friday, July 31 · 7:00</span></div>
+      <div class="email-body">
+        <h4 data-i18n="smp.t1">Today's summary</h4>
+        <p data-i18n="smp.p1">Arabica holds mid-range (52nd pctile) at 335.9¢/lb after a +3.1% session. The signal is at origin: Minas Gerais logged 1978% of normal seasonal rain during harvest, and a strong real (18th pctile USD/BRL) keeps Brazilian sellers on the sidelines — both supportive.</p>
+        <h4 data-i18n="smp.t2">What matters for your buying today</h4>
+        <p data-i18n="smp.p2">Rain-related quality risk on Brazil lots now in drying is the variable to watch over 7–14 days. Stable origins offer little urgency at current levels; documented needs over speculation.</p>
+        <h4 data-i18n="smp.t3">In brief</h4>
+        <p>· <span class="tage" data-i18n="smp.tag1">[auction]</span> <span data-i18n="smp.b1">El Injerto I (Geisha natural, 91.86) sells at $449.10/lb — Guatemala COE</span><br>
+        · <span class="tagv" data-i18n="smp.tag2">[interested source]</span> <span data-i18n="smp.b2">Importer: "Brazil — why it's worth booking before September"</span><br>
+        · <span data-i18n="smp.b3">Fairtrade raises minimum coffee prices effective December 2026</span></p>
+      </div>
+      <div class="email-foot" data-i18n="smp.foot">Independent analysis: BeanMonitor does not sell coffee.</div>
+    </div>
+  </div>
+</section>
+
+<section class="band-paper">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="how.eyebrow">How it works</div>
+    <h2 data-i18n="how.h2">From origin to inbox, before you're up</h2>
+    <div class="steps">
+      <div class="step"><div class="t" data-i18n="how.t1">05:00 UTC — Collect</div><h3 data-i18n="how.h31">The system reads the market</h3><p data-i18n="how.p1">Prices, 9 origin weather stations, 10 auction pages, 8 press feeds — gathered, cleaned and stored into a growing historical base.</p></div>
+      <div class="step"><div class="t" data-i18n="how.t2">05:01 UTC — Analyse</div><h3 data-i18n="how.h32">An AI analyst writes it up</h3><p data-i18n="how.p2">Under standing interpretation rules (currency direction, weather vs normals, source bias) — written natively in each subscriber's language, never translated.</p></div>
+      <div class="step"><div class="t" data-i18n="how.t3">07:00 — Deliver</div><h3 data-i18n="how.h33">Your brief lands</h3><p data-i18n="how.p3">Email first. Dashboard, API and MCP access for Pro and Team as the season progresses.</p></div>
+    </div>
+  </div>
+</section>
+
+<div class="agent">
+  <div class="wrap agent-in">
+    <span class="mono" data-i18n="agent.l1">Your AI agents can read us too.</span>
+    <div class="chips"><span class="chip">API</span><span class="chip">MCP server</span><span class="chip">llms.txt</span></div>
+    <span class="mono" style="opacity:.7" data-i18n="agent.l2">Machine-readable access ships with the Team plan.</span>
+  </div>
+</div>
+
+<section class="band-paper" id="pricing">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="pri.eyebrow">Pricing</div>
+    <h2 data-i18n="pri.h2">Less than one mis-timed bag</h2>
+    <div class="plans">
+      <div class="plan">
+        <div class="name" data-i18n="pri.free">Free</div>
+        <div class="price">$0</div>
+        <ul><li data-i18n="pri.f1">Weekly brief, every Monday</li><li data-i18n="pri.f2">Choose your language</li><li data-i18n="pri.f3">No card, unsubscribe anytime</li></ul>
+        <a class="cta" href="#top" data-i18n="pri.fcta">Get the free brief</a>
+      </div>
+      <div class="plan pro">
+        <span class="founder-tag" data-i18n="pri.tag">FOUNDING SEATS · 49 TOTAL</span>
+        <div class="name" data-i18n="pri.pro">Pro</div>
+        <div class="price">$19<small data-i18n="pri.mo">/mo</small><span class="strike">$29</span></div>
+        <div class="locked" data-i18n="pri.locked">Locked for life for the first 49 subscribers</div>
+        <ul><li data-i18n="pri.p1">Daily brief, every morning</li><li data-i18n="pri.p2">Real-time weather and price alerts</li><li data-i18n="pri.p3">Full auction database and history</li><li data-i18n="pri.p4">Priority on new origins (matcha and cacao next)</li></ul>
+        <a class="cta" href="https://buy.stripe.com/7sY00k3BR0HsgmOauF5J600" target="_blank" rel="noopener" data-i18n="pri.pcta">Claim a founding seat — $19/mo</a>
+      </div>
+      <div class="plan">
+        <div class="name" data-i18n="pri.team">Team + API</div>
+        <div class="price">$99<small data-i18n="pri.mo2">/mo</small></div>
+        <ul><li data-i18n="pri.t1">Everything in Pro, 5 seats</li><li data-i18n="pri.t2">API and authenticated MCP access</li><li data-i18n="pri.t3">Origin differentials (v2)</li></ul>
+        <a class="cta" href="mailto:hello@beanmonitor.coffee?subject=Team%20plan" data-i18n="pri.tcta">Talk to us</a>
+      </div>
+    </div>
+    <p class="guarantee" data-i18n="pri.guarantee">30-day money-back guarantee, no questions asked · 14-day Pro trial, no card · Founding seats are first come, first served.</p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="spo.eyebrow">Partners</div>
+    <h2 data-i18n="spo.h2">One sponsor. Clearly labelled. Never in the analysis.</h2>
+    <div class="sponsor" style="margin-top:32px">
+      <p data-i18n="spo.p">We keep a single sponsor slot per quarter — a roaster-facing brand reaching green buyers in six languages. Sponsorship buys the label "Presented with", never a word of the analysis. That's the whole point of us.</p>
+      <a class="mono" href="mailto:hello@beanmonitor.coffee?subject=Founding%20sponsor" data-i18n="spo.a">Become the founding sponsor →</a>
+    </div>
+  </div>
+</section>
+
+<section class="band-paper" id="faq">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="faq.eyebrow">FAQ</div>
+    <h2 data-i18n="faq.h2">Fair questions</h2>
+    <div class="faq" style="margin-top:28px">
+      <details><summary data-i18n="faq.q1">Importers already send me free market reports. Why pay you?</summary><div class="a" data-i18n="faq.a1">Because they sell coffee and we don't. Importer analysis is often excellent — we read it too, and pass it on — but when a seller tells you it's time to buy, that's a labelled, interested opinion. BeanMonitor is daily instead of biweekly, structured data instead of PDF prose, and has no position in your purchase.</div></details>
+      <details><summary data-i18n="faq.q2">Where does the data come from?</summary><div class="a" data-i18n="faq.a2">Exchange price feeds (indicative), Open-Meteo weather models compared against 2019-2025 normals, the public results pages of the Alliance for Coffee Excellence, and the RSS feeds of eight industry publications. Sources are named at the bottom of every brief.</div></details>
+      <details><summary data-i18n="faq.q3">Is the brief actually written in my language?</summary><div class="a" data-i18n="faq.a3">Yes — written, not translated. Each language edition is generated directly from the day's data, so a Korean subscriber reads native Korean, not machine-translated English. English and French ship today; other languages activate as subscribers request them.</div></details>
+      <details><summary data-i18n="faq.q4">How is AI used, and can I trust it?</summary><div class="a" data-i18n="faq.a4">The AI writes the narrative; it doesn't invent the facts. All numbers come from the collected data, the analyst operates under standing interpretation rules (currency direction, weather vs seasonal normals, source bias), and a human editor reviews output and tightens the rules whenever anything reads wrong. Every brief says it is AI-generated — verify before you trade.</div></details>
+      <details><summary data-i18n="faq.q5">What if it's not for me?</summary><div class="a" data-i18n="faq.a5">14-day Pro trial without a card, then a 30-day money-back guarantee, no questions asked. Cancel in two clicks. The free weekly brief stays free forever.</div></details>
+      <details><summary data-i18n="faq.q6">What's next on the roadmap?</summary><div class="a" data-i18n="faq.a6">Same engine, adjacent crises: a matcha monitor (the shortage is reshaping café menus) and a cacao monitor for bean-to-bar makers, plus the dashboard, API and MCP access for Team. Founding subscribers get each new vertical first.</div></details>
+      <details><summary data-i18n="faq.q7">Do you sell coffee, take commissions, or trade?</summary><div class="a" data-i18n="faq.a7">No, no, and no. No coffee sales, no affiliate commissions on lots or gear, no positions. One clearly-labelled sponsor slot is the only commercial relationship, and it never touches the analysis. This is not financial advice.</div></details>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-in">
+      <div>
+        <a class="logo" href="#top" style="color:var(--ink)">
+          <svg viewBox="0 0 32 32" aria-hidden="true" width="20" height="20"><ellipse cx="16" cy="16" rx="11" ry="14" fill="#79A15C" transform="rotate(18 16 16)"/><path d="M16 4 C13 10 19 22 16 28" stroke="#0E1310" stroke-width="2.6" fill="none" transform="rotate(18 16 16)"/></svg>
+          BEAN·MONITOR
+        </a>
+        <p class="independence" data-i18n="foot.ind">Independent analysis: BeanMonitor does not sell coffee.</p>
+      </div>
+      <div class="foot-links">
+        <a href="mailto:hello@beanmonitor.coffee" data-i18n="foot.contact">Contact</a>
+        <span data-i18n="foot.soon">Soon: matcha · cacao</span>
+        <span data-i18n="foot.docs">llms.txt · API docs · status — with Team</span>
+      </div>
+    </div>
+    <p style="margin-top:26px;font-size:12.5px;opacity:.65"><span id="year"></span> BeanMonitor. <span data-i18n="foot.legal">Market data is indicative and informational — not financial advice.</span></p>
+  </div>
+</footer>
+<script>
+var I18N = {
+ fr:{
+  "nav.signals":"Signaux","nav.sample":"Exemple","nav.pricing":"Tarifs","nav.faq":"FAQ","nav.cta":"Recevoir le brief",
+  "hero.eyebrow":"Indépendant · Quotidien · Rédigé nativement dans votre langue",
+  "hero.h1a":"La tour de contrôle du","hero.h1b":"café de spécialité.",
+  "hero.lead":"Les prix replacés dans leur contexte 52 semaines, la météo des origines comparée aux normales de 7 ans, une base structurée des enchères Cup of Excellence et la presse du secteur avec ses biais signalés — lus, reliés et rédigés pour 7 h, pour ceux qui achètent le café vert.",
+  "hero.ph":"vous@torrefaction.com","hero.btn":"Recevoir le brief gratuit",
+  "hero.note":"Édition hebdomadaire gratuite, pour toujours. Sans carte. Désinscription en un clic.",
+  "hero.readin":"Lire cette page en","hero.chip":"PLACES FONDATEUR · Pro quotidien à 19 $/mois verrouillé à vie pour les 49 premiers — puis 29 $",
+  "tape.label":"DERNIERS<br>RELEVÉS",
+  "sig.eyebrow":"Ce que nous surveillons","sig.h2":"Quatre signaux, une fiche de notation",
+  "sig.lead":"Chaque chiffre ci-dessous tourne déjà dans le système — ce n'est pas une promesse de feuille de route.",
+  "sig.s1.stamp":"Prix","sig.s1.title":"Du contexte, pas juste des cours","sig.s1.sub":"Arabica ICE · Cacao · USD/BRL",
+  "sig.s1.desc":"Chaque prix arrive avec sa variation 24 h et 30 jours et sa position dans l'année — « 335,9 ¢ » se lit alors « 52e percentile de son année », et non comme un nombre nu.",
+  "sig.s2.stamp":"Météo","sig.s2.title":"Origines vs normales sur 7 ans","sig.s2.sub":"9 points GPS · 4 régions productrices",
+  "sig.s2.desc":"Les millimètres bruts mentent. Nous comparons la pluie de la semaine à la normale saisonnière — c'est ainsi que le système a signalé le Minas Gerais à 1978 % de la normale en pleine récolte, la même semaine que les professionnels.",
+  "sig.s3.stamp":"Enchères","sig.s3.title":"Une base COE structurée","sig.s3.sub":"196 lots et ça continue · 10 origines suivies chaque jour",
+  "sig.s3.desc":"Ferme, variété, process, score, adjudication, acheteur — chaque vente Cup of Excellence capturée en données, avec les nouveaux résultats signalés le matin même. Personne d'autre ne publie cela sous forme de base.",
+  "sig.s4.stamp":"Presse","sig.s4.title":"Actualité avec biais signalé","sig.s4.sub":"8 sources, triées par pertinence",
+  "sig.s4.desc":"Quand un importateur qui vend du café vous conseille de « réserver avant septembre », nous le relayons — étiqueté comme source intéressée. La culture est filtrée ; le signal de marché passe.",
+  "smp.eyebrow":"Le brief quotidien","smp.h2":"90 secondes, puis retour à la torréfaction",
+  "smp.lead":"Un email à 7 h. Ligne de marché, alertes météo, résultats d'enchères frais, l'actualité qui compte — et un paragraphe sur ce que cela signifie pour vos achats. Rédigé directement depuis les données dans votre langue par un analyste IA, sous règles d'interprétation permanentes, relu par un éditeur humain.",
+  "smp.lead2":"Extrait d'une édition réelle →","smp.head":"BeanMonitor quotidien — vendredi 31 juillet · 7 h",
+  "smp.t1":"Synthèse du jour",
+  "smp.p1":"L'Arabica se tient en milieu de fourchette (52e percentile) à 335,9 ¢/lb après une séance à +3,1 %. Le signal est à l'origine : le Minas Gerais a enregistré 1978 % de la pluie normale de saison en pleine récolte, et un réal fort (18e percentile USD/BRL) garde les vendeurs brésiliens en retrait — deux facteurs de soutien.",
+  "smp.t2":"Ce qui compte pour votre achat aujourd'hui",
+  "smp.p2":"Le risque qualité lié à la pluie sur les lots brésiliens en séchage est la variable à surveiller sur 7 à 14 jours. Les origines stables n'offrent guère d'urgence aux niveaux actuels ; privilégier les besoins documentés à la spéculation.",
+  "smp.t3":"En bref","smp.tag1":"[enchère]","smp.tag2":"[source intéressée]",
+  "smp.b1":"El Injerto I (Geisha nature, 91,86) adjugé à 449,10 $/lb — COE Guatemala",
+  "smp.b2":"Importateur : « Brésil — pourquoi il vaut mieux réserver avant septembre »",
+  "smp.b3":"Fairtrade relève ses prix minimums du café à compter de décembre 2026",
+  "smp.foot":"Analyse indépendante : BeanMonitor ne vend pas de café.",
+  "how.eyebrow":"Comment ça marche","how.h2":"De l'origine à votre boîte, avant votre réveil",
+  "how.t1":"05:00 UTC — Collecte","how.h31":"Le système lit le marché","how.p1":"Prix, 9 stations météo d'origine, 10 pages d'enchères, 8 flux de presse — collectés, nettoyés et archivés dans une base historique qui grossit.",
+  "how.t2":"05:01 UTC — Analyse","how.h32":"Un analyste IA rédige","how.p2":"Sous règles d'interprétation permanentes (sens des devises, météo vs normales, biais des sources) — rédigé nativement dans la langue de chaque abonné, jamais traduit.",
+  "how.t3":"07:00 — Livraison","how.h33":"Votre brief arrive","how.p3":"L'email d'abord. Dashboard, API et accès MCP pour Pro et Team au fil de la saison.",
+  "agent.l1":"Vos agents IA peuvent nous lire aussi.","agent.l2":"L'accès machine est inclus dans le plan Team.",
+  "pri.eyebrow":"Tarifs","pri.h2":"Moins qu'un sac acheté au mauvais moment",
+  "pri.free":"Gratuit","pri.f1":"Brief hebdomadaire, chaque lundi","pri.f2":"Choisissez votre langue","pri.f3":"Sans carte, désinscription à tout moment","pri.fcta":"Recevoir le brief gratuit",
+  "pri.tag":"PLACES FONDATEUR · 49 AU TOTAL","pri.pro":"Pro","pri.mo":"/mois","pri.locked":"Verrouillé à vie pour les 49 premiers abonnés",
+  "pri.p1":"Brief quotidien, chaque matin","pri.p2":"Alertes météo et prix en temps réel","pri.p3":"Base d'enchères complète et historique","pri.p4":"Priorité sur les nouvelles origines (matcha et cacao ensuite)",
+  "pri.pcta":"Prendre une place fondateur — 19 $/mois",
+  "pri.team":"Team + API","pri.mo2":"/mois","pri.t1":"Tout Pro, 5 accès","pri.t2":"API et accès MCP authentifié","pri.t3":"Différentiels par origine (v2)","pri.tcta":"Nous parler",
+  "pri.guarantee":"Garantie 30 jours remboursé, sans question · Essai Pro 14 jours, sans carte · Les places fondateur sont attribuées par ordre d'arrivée.",
+  "spo.eyebrow":"Partenaires","spo.h2":"Un sponsor. Clairement identifié. Jamais dans l'analyse.",
+  "spo.p":"Nous gardons une seule place de sponsor par trimestre — une marque qui s'adresse aux torréfacteurs et touche les acheteurs de vert en six langues. Le sponsoring achète la mention « Présenté avec », jamais un mot de l'analyse. C'est tout notre intérêt.",
+  "spo.a":"Devenir le sponsor fondateur →",
+  "faq.eyebrow":"FAQ","faq.h2":"Questions légitimes",
+  "faq.q1":"Les importateurs m'envoient déjà des rapports gratuits. Pourquoi vous payer ?",
+  "faq.a1":"Parce qu'ils vendent du café et pas nous. L'analyse des importateurs est souvent excellente — nous la lisons et la relayons — mais quand un vendeur vous dit qu'il est temps d'acheter, c'est un avis intéressé, et nous l'étiquetons comme tel. BeanMonitor est quotidien plutôt que bimensuel, structuré en données plutôt qu'en PDF, et n'a aucune position dans votre achat.",
+  "faq.q2":"D'où viennent les données ?",
+  "faq.a2":"Flux de prix boursiers (indicatifs), modèles météo Open-Meteo comparés aux normales 2019-2025, pages publiques de résultats de l'Alliance for Coffee Excellence, et flux RSS de huit publications du secteur. Les sources sont nommées au bas de chaque brief.",
+  "faq.q3":"Le brief est-il vraiment rédigé dans ma langue ?",
+  "faq.a3":"Oui — rédigé, pas traduit. Chaque édition est générée directement depuis les données du jour, si bien qu'un abonné coréen lit du coréen natif, pas de l'anglais passé à la machine. L'anglais et le français sont disponibles aujourd'hui ; les autres langues s'activent à la demande des abonnés.",
+  "faq.q4":"Comment l'IA est-elle utilisée, et peut-on lui faire confiance ?",
+  "faq.a4":"L'IA rédige le récit ; elle n'invente pas les faits. Tous les chiffres viennent des données collectées, l'analyste opère sous règles d'interprétation permanentes (sens des devises, météo vs normales saisonnières, biais des sources), et un éditeur humain relit et resserre les règles dès que quelque chose sonne faux. Chaque brief indique qu'il est généré par IA — vérifiez avant toute décision.",
+  "faq.q5":"Et si ça ne me convient pas ?",
+  "faq.a5":"Essai Pro de 14 jours sans carte, puis garantie 30 jours remboursé, sans question. Résiliation en deux clics. Le brief hebdomadaire gratuit reste gratuit pour toujours.",
+  "faq.q6":"Quelle est la suite ?",
+  "faq.a6":"Le même moteur, sur des crises voisines : un monitor matcha (la pénurie redessine les cartes des cafés) et un monitor cacao pour les artisans bean-to-bar, plus le dashboard, l'API et l'accès MCP pour Team. Les abonnés fondateurs obtiennent chaque nouvelle verticale en premier.",
+  "faq.q7":"Vendez-vous du café, touchez-vous des commissions, tradez-vous ?",
+  "faq.a7":"Non, non et non. Aucune vente de café, aucune commission d'affiliation sur des lots ou du matériel, aucune position. Une seule place de sponsor clairement identifiée constitue la seule relation commerciale, et elle ne touche jamais l'analyse. Ceci n'est pas un conseil financier.",
+  "foot.ind":"Analyse indépendante : BeanMonitor ne vend pas de café.","foot.contact":"Contact","foot.soon":"Bientôt : matcha · cacao","foot.docs":"llms.txt · docs API · statut — avec Team",
+  "foot.legal":"Les données de marché sont indicatives et informatives — ceci n'est pas un conseil financier."
+ },
+ es:{
+  "nav.signals":"Señales","nav.sample":"Ejemplo","nav.pricing":"Precios","nav.faq":"FAQ","nav.cta":"Recibir el brief",
+  "hero.eyebrow":"Independiente · Diario · Redactado de forma nativa en su idioma",
+  "hero.h1a":"La torre de control del","hero.h1b":"café de especialidad.",
+  "hero.lead":"Precios en su contexto de 52 semanas, clima de origen frente a normales de 7 años, una base de datos estructurada de las subastas Cup of Excellence y prensa del sector con sus sesgos señalados — leído, conectado y redactado antes de las 7:00, para quienes compran café verde.",
+  "hero.ph":"usted@tostaduria.com","hero.btn":"Recibir el brief gratuito",
+  "hero.note":"Edición semanal gratuita, para siempre. Sin tarjeta. Baja en un clic.",
+  "hero.readin":"Leer esta página en","hero.chip":"PLAZAS FUNDADORAS · Pro diario a 19 $/mes bloqueado de por vida para los 49 primeros — luego 29 $",
+  "tape.label":"ÚLTIMAS<br>LECTURAS",
+  "sig.eyebrow":"Lo que vigilamos","sig.h2":"Cuatro señales, una ficha de cata",
+  "sig.lead":"Cada cifra de abajo ya funciona en el sistema — no es una promesa de hoja de ruta.",
+  "sig.s1.stamp":"Precios","sig.s1.title":"Contexto, no solo cotizaciones","sig.s1.sub":"Arábica ICE · Cacao · USD/BRL",
+  "sig.s1.desc":"Cada precio llega con su variación de 24 h y 30 días y su posición en el rango anual — así «335,9 ¢» se lee como «percentil 52 de su año», y no como un número desnudo.",
+  "sig.s2.stamp":"Clima","sig.s2.title":"Orígenes frente a normales de 7 años","sig.s2.sub":"9 puntos GPS · 4 regiones productoras",
+  "sig.s2.desc":"Los milímetros en bruto engañan. Comparamos la lluvia de la semana con la normal estacional — así el sistema señaló Minas Gerais al 1978 % de lo normal en plena cosecha, la misma semana que los profesionales.",
+  "sig.s3.stamp":"Subastas","sig.s3.title":"Una base de datos COE estructurada","sig.s3.sub":"196 lotes y subiendo · 10 orígenes seguidos a diario",
+  "sig.s3.desc":"Finca, variedad, proceso, puntuación, puja final, comprador — cada adjudicación Cup of Excellence capturada como dato, con los nuevos resultados señalados la misma mañana. Nadie más publica esto como base de datos.",
+  "sig.s4.stamp":"Prensa","sig.s4.title":"Noticias con sesgo señalado","sig.s4.sub":"8 fuentes, ordenadas por relevancia",
+  "sig.s4.desc":"Cuando un importador que vende café le aconseja «reservar antes de septiembre», lo transmitimos — etiquetado como fuente interesada. La cultura se filtra; la señal de mercado pasa.",
+  "smp.eyebrow":"El brief diario","smp.h2":"90 segundos y de vuelta al tueste",
+  "smp.lead":"Un correo a las 7:00. Línea de mercado, alertas de clima, resultados de subasta recientes, las noticias que importan — y un párrafo sobre lo que significa para sus compras. Redactado directamente desde los datos en su idioma por un analista de IA, bajo reglas de interpretación permanentes, revisado por un editor humano.",
+  "smp.lead2":"Extracto de una edición real →","smp.head":"BeanMonitor diario — viernes 31 de julio · 7:00",
+  "smp.t1":"Resumen del día",
+  "smp.p1":"El arábica se mantiene en la mitad del rango (percentil 52) a 335,9 ¢/lb tras una sesión de +3,1 %. La señal está en el origen: Minas Gerais registró el 1978 % de la lluvia normal de temporada en plena cosecha, y un real fuerte (percentil 18 USD/BRL) mantiene retraídos a los vendedores brasileños — ambos factores de apoyo.",
+  "smp.t2":"Lo que importa para su compra hoy",
+  "smp.p2":"El riesgo de calidad por lluvia en los lotes brasileños en secado es la variable a vigilar durante 7-14 días. Los orígenes estables ofrecen poca urgencia a los niveles actuales; necesidades documentadas antes que especulación.",
+  "smp.t3":"En breve","smp.tag1":"[subasta]","smp.tag2":"[fuente interesada]",
+  "smp.b1":"El Injerto I (Geisha natural, 91,86) adjudicado a 449,10 $/lb — COE Guatemala",
+  "smp.b2":"Importador: «Brasil — por qué conviene reservar antes de septiembre»",
+  "smp.b3":"Fairtrade sube sus precios mínimos del café a partir de diciembre de 2026",
+  "smp.foot":"Análisis independiente: BeanMonitor no vende café.",
+  "how.eyebrow":"Cómo funciona","how.h2":"Del origen a su bandeja, antes de que se levante",
+  "how.t1":"05:00 UTC — Recopilar","how.h31":"El sistema lee el mercado","how.p1":"Precios, 9 estaciones meteorológicas de origen, 10 páginas de subastas, 8 fuentes de prensa — recogidos, limpiados y archivados en una base histórica que crece.",
+  "how.t2":"05:01 UTC — Analizar","how.h32":"Un analista de IA lo redacta","how.p2":"Bajo reglas de interpretación permanentes (dirección de divisas, clima frente a normales, sesgo de fuentes) — redactado de forma nativa en el idioma de cada suscriptor, nunca traducido.",
+  "how.t3":"07:00 — Entregar","how.h33":"Su brief llega","how.p3":"Primero el correo. Panel, API y acceso MCP para Pro y Team a lo largo de la temporada.",
+  "agent.l1":"Sus agentes de IA también pueden leernos.","agent.l2":"El acceso legible por máquina se incluye en el plan Team.",
+  "pri.eyebrow":"Precios","pri.h2":"Menos que un saco comprado a destiempo",
+  "pri.free":"Gratis","pri.f1":"Brief semanal, cada lunes","pri.f2":"Elija su idioma","pri.f3":"Sin tarjeta, baja cuando quiera","pri.fcta":"Recibir el brief gratuito",
+  "pri.tag":"PLAZAS FUNDADORAS · 49 EN TOTAL","pri.pro":"Pro","pri.mo":"/mes","pri.locked":"Bloqueado de por vida para los 49 primeros suscriptores",
+  "pri.p1":"Brief diario, cada mañana","pri.p2":"Alertas de clima y precio en tiempo real","pri.p3":"Base de subastas completa e histórico","pri.p4":"Prioridad en nuevos orígenes (matcha y cacao después)",
+  "pri.pcta":"Reservar una plaza fundadora — 19 $/mes",
+  "pri.team":"Team + API","pri.mo2":"/mes","pri.t1":"Todo Pro, 5 accesos","pri.t2":"API y acceso MCP autenticado","pri.t3":"Diferenciales por origen (v2)","pri.tcta":"Hablemos",
+  "pri.guarantee":"Garantía de devolución de 30 días, sin preguntas · Prueba Pro de 14 días, sin tarjeta · Las plazas fundadoras se asignan por orden de llegada.",
+  "spo.eyebrow":"Socios","spo.h2":"Un patrocinador. Claramente identificado. Nunca en el análisis.",
+  "spo.p":"Mantenemos una sola plaza de patrocinio por trimestre — una marca dirigida a tostadores que llega a compradores de verde en seis idiomas. El patrocinio compra la mención «Presentado con», nunca una palabra del análisis. Ese es todo nuestro sentido.",
+  "spo.a":"Ser el patrocinador fundador →",
+  "faq.eyebrow":"FAQ","faq.h2":"Preguntas legítimas",
+  "faq.q1":"Los importadores ya me envían informes gratuitos. ¿Por qué pagarle a usted?",
+  "faq.a1":"Porque ellos venden café y nosotros no. El análisis de los importadores suele ser excelente — también lo leemos y lo transmitimos — pero cuando un vendedor le dice que es momento de comprar, es una opinión interesada, y la etiquetamos como tal. BeanMonitor es diario en vez de quincenal, datos estructurados en vez de PDF, y no tiene posición en su compra.",
+  "faq.q2":"¿De dónde vienen los datos?",
+  "faq.a2":"Cotizaciones de mercado (indicativas), modelos meteorológicos Open-Meteo comparados con normales 2019-2025, páginas públicas de resultados de la Alliance for Coffee Excellence, y fuentes RSS de ocho publicaciones del sector. Las fuentes se citan al final de cada brief.",
+  "faq.q3":"¿El brief está realmente escrito en mi idioma?",
+  "faq.a3":"Sí — escrito, no traducido. Cada edición se genera directamente desde los datos del día, de modo que un suscriptor coreano lee coreano nativo, no inglés pasado por máquina. Inglés y francés están disponibles hoy; los demás idiomas se activan cuando los suscriptores los piden.",
+  "faq.q4":"¿Cómo se usa la IA y puedo confiar en ella?",
+  "faq.a4":"La IA escribe el relato; no inventa los hechos. Todas las cifras provienen de los datos recogidos, el analista opera bajo reglas de interpretación permanentes (dirección de divisas, clima frente a normales estacionales, sesgo de fuentes), y un editor humano revisa y ajusta las reglas cuando algo suena mal. Cada brief indica que está generado por IA — verifique antes de decidir.",
+  "faq.q5":"¿Y si no es para mí?",
+  "faq.a5":"Prueba Pro de 14 días sin tarjeta, después garantía de devolución de 30 días, sin preguntas. Cancelación en dos clics. El brief semanal gratuito sigue siendo gratis para siempre.",
+  "faq.q6":"¿Qué viene después?",
+  "faq.a6":"El mismo motor, en crisis vecinas: un monitor de matcha (la escasez está rehaciendo las cartas de los cafés) y un monitor de cacao para artesanos bean-to-bar, además del panel, la API y el acceso MCP para Team. Los suscriptores fundadores reciben cada nueva vertical primero.",
+  "faq.q7":"¿Venden café, cobran comisiones, operan en el mercado?",
+  "faq.a7":"No, no y no. Ninguna venta de café, ninguna comisión de afiliación sobre lotes o equipos, ninguna posición. Una única plaza de patrocinio claramente identificada es la única relación comercial, y nunca toca el análisis. Esto no es asesoramiento financiero.",
+  "foot.ind":"Análisis independiente: BeanMonitor no vende café.","foot.contact":"Contacto","foot.soon":"Pronto: matcha · cacao","foot.docs":"llms.txt · docs API · estado — con Team",
+  "foot.legal":"Los datos de mercado son indicativos e informativos — esto no es asesoramiento financiero."
+ },
+ pt:{
+  "nav.signals":"Sinais","nav.sample":"Exemplo","nav.pricing":"Preços","nav.faq":"FAQ","nav.cta":"Receber o brief",
+  "hero.eyebrow":"Independente · Diário · Escrito nativamente no seu idioma",
+  "hero.h1a":"A torre de controlo do","hero.h1b":"café especial.",
+  "hero.lead":"Preços no seu contexto de 52 semanas, clima nas origens face às normais de 7 anos, uma base de dados estruturada dos leilões Cup of Excellence e imprensa do setor com os seus enviesamentos assinalados — lido, ligado e escrito até às 7:00, para quem compra café verde.",
+  "hero.ph":"voce@torrefacao.com","hero.btn":"Receber o brief gratuito",
+  "hero.note":"Edição semanal gratuita, para sempre. Sem cartão. Cancelamento num clique.",
+  "hero.readin":"Ler esta página em","hero.chip":"LUGARES FUNDADORES · Pro diário a 19 $/mês fixado para sempre para os 49 primeiros — depois 29 $",
+  "tape.label":"ÚLTIMAS<br>LEITURAS",
+  "sig.eyebrow":"O que vigiamos","sig.h2":"Quatro sinais, uma ficha de prova",
+  "sig.lead":"Cada número abaixo já corre no sistema — não é uma promessa de roteiro.",
+  "sig.s1.stamp":"Preços","sig.s1.title":"Contexto, não apenas cotações","sig.s1.sub":"Arábica ICE · Cacau · USD/BRL",
+  "sig.s1.desc":"Cada preço chega com a sua variação de 24 h e 30 dias e a sua posição no intervalo anual — assim «335,9 ¢» lê-se como «percentil 52 do seu ano», e não como um número nu.",
+  "sig.s2.stamp":"Clima","sig.s2.title":"Origens vs normais de 7 anos","sig.s2.sub":"9 pontos GPS · 4 regiões produtoras",
+  "sig.s2.desc":"Os milímetros em bruto enganam. Comparamos a chuva da semana com a normal sazonal — foi assim que o sistema assinalou Minas Gerais a 1978 % do normal em plena colheita, na mesma semana que os profissionais.",
+  "sig.s3.stamp":"Leilões","sig.s3.title":"Uma base de dados COE estruturada","sig.s3.sub":"196 lotes e a crescer · 10 origens seguidas diariamente",
+  "sig.s3.desc":"Fazenda, variedade, processo, pontuação, lance final, comprador — cada arrematação Cup of Excellence capturada como dado, com os novos resultados assinalados na própria manhã. Mais ninguém publica isto como base de dados.",
+  "sig.s4.stamp":"Imprensa","sig.s4.title":"Notícias com enviesamento assinalado","sig.s4.sub":"8 fontes, ordenadas por relevância",
+  "sig.s4.desc":"Quando um importador que vende café lhe diz para «reservar antes de setembro», nós transmitimos — etiquetado como fonte interessada. A cultura é filtrada; o sinal de mercado passa.",
+  "smp.eyebrow":"O brief diário","smp.h2":"90 segundos e de volta à torra",
+  "smp.lead":"Um email às 7:00. Linha de mercado, alertas de clima, resultados de leilão recentes, as notícias que contam — e um parágrafo sobre o que significam para as suas compras. Escrito diretamente a partir dos dados no seu idioma por um analista de IA, sob regras de interpretação permanentes, revisto por um editor humano.",
+  "smp.lead2":"Excerto de uma edição real →","smp.head":"BeanMonitor diário — sexta-feira, 31 de julho · 7:00",
+  "smp.t1":"Síntese do dia",
+  "smp.p1":"O arábica mantém-se a meio do intervalo (percentil 52) a 335,9 ¢/lb após uma sessão de +3,1 %. O sinal está na origem: Minas Gerais registou 1978 % da chuva normal da época em plena colheita, e um real forte (percentil 18 USD/BRL) mantém os vendedores brasileiros retraídos — ambos fatores de suporte.",
+  "smp.t2":"O que conta para a sua compra hoje",
+  "smp.p2":"O risco de qualidade ligado à chuva nos lotes brasileiros em secagem é a variável a vigiar durante 7 a 14 dias. As origens estáveis oferecem pouca urgência aos níveis atuais; necessidades documentadas antes de especulação.",
+  "smp.t3":"Em resumo","smp.tag1":"[leilão]","smp.tag2":"[fonte interessada]",
+  "smp.b1":"El Injerto I (Geisha natural, 91,86) arrematado a 449,10 $/lb — COE Guatemala",
+  "smp.b2":"Importador: «Brasil — porque vale a pena reservar antes de setembro»",
+  "smp.b3":"Fairtrade aumenta os preços mínimos do café a partir de dezembro de 2026",
+  "smp.foot":"Análise independente: a BeanMonitor não vende café.",
+  "how.eyebrow":"Como funciona","how.h2":"Da origem à sua caixa, antes de acordar",
+  "how.t1":"05:00 UTC — Recolher","how.h31":"O sistema lê o mercado","how.p1":"Preços, 9 estações meteorológicas de origem, 10 páginas de leilões, 8 fluxos de imprensa — recolhidos, limpos e arquivados numa base histórica que cresce.",
+  "how.t2":"05:01 UTC — Analisar","how.h32":"Um analista de IA escreve","how.p2":"Sob regras de interpretação permanentes (direção cambial, clima vs normais, enviesamento das fontes) — escrito nativamente no idioma de cada assinante, nunca traduzido.",
+  "how.t3":"07:00 — Entregar","how.h33":"O seu brief chega","how.p3":"Primeiro o email. Painel, API e acesso MCP para Pro e Team ao longo da época.",
+  "agent.l1":"Os seus agentes de IA também nos podem ler.","agent.l2":"O acesso legível por máquina está incluído no plano Team.",
+  "pri.eyebrow":"Preços","pri.h2":"Menos do que um saco comprado na altura errada",
+  "pri.free":"Gratuito","pri.f1":"Brief semanal, todas as segundas","pri.f2":"Escolha o seu idioma","pri.f3":"Sem cartão, cancele quando quiser","pri.fcta":"Receber o brief gratuito",
+  "pri.tag":"LUGARES FUNDADORES · 49 NO TOTAL","pri.pro":"Pro","pri.mo":"/mês","pri.locked":"Fixado para sempre para os 49 primeiros assinantes",
+  "pri.p1":"Brief diário, todas as manhãs","pri.p2":"Alertas de clima e preço em tempo real","pri.p3":"Base de leilões completa e histórico","pri.p4":"Prioridade em novas origens (matcha e cacau a seguir)",
+  "pri.pcta":"Garantir um lugar fundador — 19 $/mês",
+  "pri.team":"Team + API","pri.mo2":"/mês","pri.t1":"Tudo o do Pro, 5 acessos","pri.t2":"API e acesso MCP autenticado","pri.t3":"Diferenciais por origem (v2)","pri.tcta":"Falar connosco",
+  "pri.guarantee":"Garantia de reembolso de 30 dias, sem perguntas · Teste Pro de 14 dias, sem cartão · Os lugares fundadores são por ordem de chegada.",
+  "spo.eyebrow":"Parceiros","spo.h2":"Um patrocinador. Claramente identificado. Nunca na análise.",
+  "spo.p":"Mantemos um único lugar de patrocínio por trimestre — uma marca dirigida a torrefatores que alcança compradores de verde em seis idiomas. O patrocínio compra a menção «Apresentado com», nunca uma palavra da análise. É esse todo o nosso sentido.",
+  "spo.a":"Tornar-se o patrocinador fundador →",
+  "faq.eyebrow":"FAQ","faq.h2":"Perguntas legítimas",
+  "faq.q1":"Os importadores já me enviam relatórios gratuitos. Porquê pagar-vos?",
+  "faq.a1":"Porque eles vendem café e nós não. A análise dos importadores é muitas vezes excelente — também a lemos e a transmitimos — mas quando um vendedor lhe diz que é altura de comprar, é uma opinião interessada, e etiquetamo-la como tal. A BeanMonitor é diária em vez de quinzenal, dados estruturados em vez de PDF, e não tem posição na sua compra.",
+  "faq.q2":"De onde vêm os dados?",
+  "faq.a2":"Cotações de mercado (indicativas), modelos meteorológicos Open-Meteo comparados com normais de 2019-2025, páginas públicas de resultados da Alliance for Coffee Excellence, e fluxos RSS de oito publicações do setor. As fontes são citadas no final de cada brief.",
+  "faq.q3":"O brief é mesmo escrito no meu idioma?",
+  "faq.a3":"Sim — escrito, não traduzido. Cada edição é gerada diretamente a partir dos dados do dia, pelo que um assinante coreano lê coreano nativo, e não inglês passado pela máquina. Inglês e francês estão disponíveis hoje; os outros idiomas ativam-se quando os assinantes os pedem.",
+  "faq.q4":"Como é usada a IA e posso confiar nela?",
+  "faq.a4":"A IA escreve a narrativa; não inventa os factos. Todos os números vêm dos dados recolhidos, o analista opera sob regras de interpretação permanentes (direção cambial, clima vs normais sazonais, enviesamento das fontes), e um editor humano revê e aperta as regras sempre que algo soa mal. Cada brief indica que é gerado por IA — verifique antes de decidir.",
+  "faq.q5":"E se não for para mim?",
+  "faq.a5":"Teste Pro de 14 dias sem cartão, depois garantia de reembolso de 30 dias, sem perguntas. Cancelamento em dois cliques. O brief semanal gratuito continua gratuito para sempre.",
+  "faq.q6":"O que vem a seguir?",
+  "faq.a6":"O mesmo motor, em crises vizinhas: um monitor de matcha (a escassez está a refazer as cartas dos cafés) e um monitor de cacau para artesãos bean-to-bar, além do painel, da API e do acesso MCP para Team. Os assinantes fundadores recebem cada nova vertical primeiro.",
+  "faq.q7":"Vendem café, recebem comissões, negoceiam?",
+  "faq.a7":"Não, não e não. Nenhuma venda de café, nenhuma comissão de afiliação sobre lotes ou equipamento, nenhuma posição. Um único lugar de patrocínio claramente identificado é a única relação comercial, e nunca toca na análise. Isto não é aconselhamento financeiro.",
+  "foot.ind":"Análise independente: a BeanMonitor não vende café.","foot.contact":"Contacto","foot.soon":"Em breve: matcha · cacau","foot.docs":"llms.txt · docs API · estado — com Team",
+  "foot.legal":"Os dados de mercado são indicativos e informativos — isto não é aconselhamento financeiro."
+ },
+ ja:{
+  "nav.signals":"シグナル","nav.sample":"サンプル","nav.pricing":"料金","nav.faq":"FAQ","nav.cta":"ブリーフを受け取る",
+  "hero.eyebrow":"独立 · 毎日 · あなたの言語でネイティブ執筆",
+  "hero.h1a":"スペシャルティコーヒーの","hero.h1b":"管制塔。",
+  "hero.lead":"52週間の文脈で読む価格、7年平年値と比較した産地の天候、構造化されたCup of Excellenceオークションのデータベース、そして立場を明示した業界報道。生豆を買う人のために、毎朝7時までに読み解き、つなぎ、書き上げます。",
+  "hero.ph":"you@roastery.com","hero.btn":"無料ブリーフを受け取る",
+  "hero.note":"週次版は永久に無料。カード不要。いつでも配信停止できます。",
+  "hero.readin":"このページの言語","hero.chip":"創設メンバー枠 · 先着49名は日次Proが月19ドルで永久固定 — 以後は29ドル",
+  "tape.label":"最新<br>データ",
+  "sig.eyebrow":"監視対象","sig.h2":"4つのシグナル、1枚の評価シート",
+  "sig.lead":"以下の数値はすべて、現在システムで実際に動いているものです。ロードマップ上の約束ではありません。",
+  "sig.s1.stamp":"価格","sig.s1.title":"相場だけでなく文脈を","sig.s1.sub":"ICEアラビカ · カカオ · USD/BRL",
+  "sig.s1.desc":"すべての価格に24時間・30日の変動と52週レンジ内の位置を添えます。「335.9セント」は「年間の52パーセンタイル」として読めるようになり、裸の数字ではなくなります。",
+  "sig.s2.stamp":"天候","sig.s2.title":"産地と7年平年値の比較","sig.s2.sub":"9つのGPS地点 · 4つの生産地域",
+  "sig.s2.desc":"生のミリ数は誤解を招きます。週間降水量を季節平年値と比較することで、収穫期のミナスジェライスを平年比1978%として検知しました。専門家と同じ週のことです。",
+  "sig.s3.stamp":"オークション","sig.s3.title":"構造化されたCOEデータベース","sig.s3.sub":"196ロット、増加中 · 10産地を毎日追跡",
+  "sig.s3.desc":"農園、品種、精製、スコア、落札価格、買い手 — Cup of Excellenceの落札をすべてデータとして記録し、新しい結果は当日の朝に通知します。これをデータベースとして公開しているところは他にありません。",
+  "sig.s4.stamp":"報道","sig.s4.title":"立場を明示した業界ニュース","sig.s4.sub":"8つの情報源、重要度順",
+  "sig.s4.desc":"コーヒーを売るインポーターが「9月前の買い付けを」と言うとき、私たちはそれを伝えます — 利害関係のある情報源として明示した上で。カルチャー記事は除外し、市場のシグナルだけを通します。",
+  "smp.eyebrow":"日次ブリーフ","smp.h2":"90秒で読了、あとは焙煎へ",
+  "smp.lead":"朝7時に1通のメール。相場、天候アラート、最新の落札結果、重要なニュース — そして仕入れにとって何を意味するかを1段落で。AIアナリストが恒常的な解釈ルールのもと、データから直接あなたの言語で執筆し、人間の編集者が確認します。",
+  "smp.lead2":"実際の配信からの抜粋 →","smp.head":"BeanMonitor 日次 — 7月31日(金) · 7:00",
+  "smp.t1":"本日の要約",
+  "smp.p1":"アラビカは+3.1%の取引を経て335.9セント/lb、レンジ中央(52パーセンタイル)を維持。シグナルは産地にあります。ミナスジェライスは収穫期に平年比1978%の降水を記録し、レアル高(USD/BRL 18パーセンタイル)がブラジルの売り手を様子見にさせています。いずれも下支え要因です。",
+  "smp.t2":"本日の仕入れで重要なこと",
+  "smp.p2":"乾燥中のブラジル・ロットにおける降雨起因の品質リスクが、今後7〜14日の注視点です。安定した産地は現在の水準では急ぐ理由に乏しく、投機よりも確定した需要を優先すべきでしょう。",
+  "smp.t3":"要点","smp.tag1":"[落札]","smp.tag2":"[利害関係あり]",
+  "smp.b1":"El Injerto I(ゲイシャ ナチュラル、91.86)が449.10ドル/lbで落札 — グアテマラCOE",
+  "smp.b2":"インポーター:「ブラジル — 9月前の買い付けが有利な理由」",
+  "smp.b3":"フェアトレードが2026年12月からコーヒー最低価格を引き上げ",
+  "smp.foot":"独立した分析:BeanMonitorはコーヒーを販売していません。",
+  "how.eyebrow":"仕組み","how.h2":"産地から受信箱へ、あなたが起きる前に",
+  "how.t1":"05:00 UTC — 収集","how.h31":"システムが市場を読む","how.p1":"価格、産地の気象9地点、オークション10ページ、報道8フィード — 収集・整理し、拡大し続ける履歴データベースに保存します。",
+  "how.t2":"05:01 UTC — 分析","how.h32":"AIアナリストが執筆","how.p2":"恒常的な解釈ルール(為替の方向、天候と平年値、情報源の立場)のもとで、各購読者の言語でネイティブに執筆します。翻訳ではありません。",
+  "how.t3":"07:00 — 配信","how.h33":"ブリーフが届く","how.p3":"まずはメール。ダッシュボード、API、MCPアクセスはProとTeam向けにシーズン中に順次提供します。",
+  "agent.l1":"あなたのAIエージェントも読めます。","agent.l2":"機械可読アクセスはTeamプランに含まれます。",
+  "pri.eyebrow":"料金","pri.h2":"買い時を外した1袋より安い",
+  "pri.free":"無料","pri.f1":"週次ブリーフ、毎週月曜","pri.f2":"言語を選択できます","pri.f3":"カード不要、いつでも解約可","pri.fcta":"無料ブリーフを受け取る",
+  "pri.tag":"創設メンバー枠 · 全49名","pri.pro":"Pro","pri.mo":"/月","pri.locked":"先着49名は生涯この価格で固定",
+  "pri.p1":"日次ブリーフ、毎朝","pri.p2":"天候・価格のリアルタイムアラート","pri.p3":"オークションDBと履歴のフルアクセス","pri.p4":"新産地の優先提供(次は抹茶とカカオ)",
+  "pri.pcta":"創設メンバー枠を確保 — 月19ドル",
+  "pri.team":"Team + API","pri.mo2":"/月","pri.t1":"Proの全機能、5アカウント","pri.t2":"APIと認証付きMCPアクセス","pri.t3":"産地別ディファレンシャル(v2)","pri.tcta":"問い合わせる",
+  "pri.guarantee":"30日間の返金保証、理由不問 · 14日間のPro無料トライアル、カード不要 · 創設メンバー枠は先着順です。",
+  "spo.eyebrow":"パートナー","spo.h2":"スポンサーは1社のみ。明示します。分析には決して入りません。",
+  "spo.p":"四半期ごとにスポンサー枠は1つだけ。ロースター向けブランドが、6言語で生豆バイヤーに届きます。スポンサーシップが買えるのは「提供:」の表記だけで、分析の1語たりとも買えません。それが私たちの存在意義です。",
+  "spo.a":"創設スポンサーになる →",
+  "faq.eyebrow":"FAQ","faq.h2":"もっともな疑問",
+  "faq.q1":"インポーターから無料のマーケットレポートが届きます。なぜ有料で購読するのですか?",
+  "faq.a1":"彼らはコーヒーを売り、私たちは売らないからです。インポーターの分析はしばしば優れており、私たちも読み、内容を伝えます。しかし売り手が「買い時だ」と言うとき、それは利害関係のある意見であり、私たちはそう明示します。BeanMonitorは隔週ではなく毎日、PDFの散文ではなく構造化データで、あなたの仕入れに一切のポジションを持ちません。",
+  "faq.q2":"データの出所は?",
+  "faq.a2":"取引所の価格(参考値)、2019〜2025年の平年値と比較したOpen-Meteoの気象モデル、Alliance for Coffee Excellenceの公開結果ページ、業界8媒体のRSSフィードです。出典は毎回ブリーフの末尾に明記します。",
+  "faq.q3":"ブリーフは本当に私の言語で書かれますか?",
+  "faq.a3":"はい — 翻訳ではなく執筆です。各言語版はその日のデータから直接生成されるため、韓国語の購読者は機械翻訳された英語ではなく、自然な韓国語を読みます。英語とフランス語は提供中で、他の言語は購読者の要望に応じて有効化します。",
+  "faq.q4":"AIはどう使われ、信頼できますか?",
+  "faq.a4":"AIは物語を書きますが、事実を作りません。すべての数値は収集データに基づき、アナリストは恒常的な解釈ルール(為替の方向、天候と季節平年値、情報源の立場)のもとで動作し、人間の編集者が出力を確認して違和感があればルールを厳格化します。すべてのブリーフにAI生成である旨を明記しています。取引前にご確認ください。",
+  "faq.q5":"合わなかった場合は?",
+  "faq.a5":"カード不要の14日間Proトライアル、その後は理由不問の30日間返金保証。解約は2クリックです。無料の週次ブリーフは永久に無料のままです。",
+  "faq.q6":"今後の予定は?",
+  "faq.a6":"同じエンジンを隣接する危機へ。抹茶モニター(供給難がカフェのメニューを変えつつあります)、bean-to-bar向けのカカオモニター、さらにTeam向けのダッシュボード、API、MCPアクセスです。創設購読者は新しい分野を最初に利用できます。",
+  "faq.q7":"コーヒーの販売、手数料、トレードはしていますか?",
+  "faq.a7":"いずれも行っていません。コーヒーの販売なし、ロットや機材のアフィリエイト報酬なし、ポジションなし。明示された1つのスポンサー枠だけが唯一の商業関係であり、分析には決して触れません。これは投資助言ではありません。",
+  "foot.ind":"独立した分析:BeanMonitorはコーヒーを販売していません。","foot.contact":"お問い合わせ","foot.soon":"近日:抹茶 · カカオ","foot.docs":"llms.txt · APIドキュメント · ステータス — Team向け",
+  "foot.legal":"市場データは参考情報であり、投資助言ではありません。"
+ },
+ ko:{
+  "nav.signals":"시그널","nav.sample":"샘플","nav.pricing":"요금","nav.faq":"FAQ","nav.cta":"브리핑 받기",
+  "hero.eyebrow":"독립적 · 매일 · 당신의 언어로 직접 작성",
+  "hero.h1a":"스페셜티 커피의","hero.h1b":"관제탑.",
+  "hero.lead":"52주 맥락 속의 가격, 7년 평년값과 비교한 산지 날씨, 구조화된 Cup of Excellence 경매 데이터베이스, 그리고 이해관계를 명시한 업계 보도 — 생두를 사는 사람들을 위해 매일 아침 7시까지 읽고, 연결하고, 정리합니다.",
+  "hero.ph":"you@roastery.com","hero.btn":"무료 브리핑 받기",
+  "hero.note":"주간판은 평생 무료. 카드 불필요. 언제든 구독 해지.",
+  "hero.readin":"이 페이지 언어","hero.chip":"창립 멤버 · 선착순 49명은 일간 Pro 월 19달러 평생 고정 — 이후 29달러",
+  "tape.label":"최신<br>데이터",
+  "sig.eyebrow":"우리가 보는 것","sig.h2":"네 가지 시그널, 한 장의 평가표",
+  "sig.lead":"아래 모든 수치는 지금 시스템에서 실제로 돌아가고 있습니다. 로드맵상의 약속이 아닙니다.",
+  "sig.s1.stamp":"가격","sig.s1.title":"시세가 아니라 맥락","sig.s1.sub":"ICE 아라비카 · 카카오 · USD/BRL",
+  "sig.s1.desc":"모든 가격에 24시간·30일 변동과 52주 범위 내 위치를 함께 제공합니다. 그래서 「335.9센트」는 「연중 52번째 백분위」로 읽히며, 맨숫자로 남지 않습니다.",
+  "sig.s2.stamp":"날씨","sig.s2.title":"산지와 7년 평년값 비교","sig.s2.sub":"GPS 9개 지점 · 생산 지역 4곳",
+  "sig.s2.desc":"밀리미터 수치만으로는 오해하기 쉽습니다. 주간 강수량을 계절 평년값과 비교했기에, 수확기 미나스제라이스를 평년 대비 1978%로 포착했습니다. 전문가들과 같은 주였습니다.",
+  "sig.s3.stamp":"경매","sig.s3.title":"구조화된 COE 데이터베이스","sig.s3.sub":"196개 로트, 계속 증가 · 10개 산지 매일 추적",
+  "sig.s3.desc":"농장, 품종, 프로세싱, 점수, 낙찰가, 구매자 — 모든 Cup of Excellence 낙찰을 데이터로 기록하고, 새 결과는 당일 아침에 알립니다. 이를 데이터베이스로 공개하는 곳은 없습니다.",
+  "sig.s4.stamp":"보도","sig.s4.title":"이해관계를 표시한 업계 뉴스","sig.s4.sub":"8개 매체, 중요도순 정렬",
+  "sig.s4.desc":"커피를 파는 수입사가 「9월 전에 예약하라」고 말할 때, 우리는 그것을 전달합니다 — 이해관계가 있는 출처로 표시해서. 문화 기사는 걸러내고 시장 신호만 통과시킵니다.",
+  "smp.eyebrow":"일간 브리핑","smp.h2":"90초면 끝, 다시 로스팅으로",
+  "smp.lead":"아침 7시에 이메일 한 통. 시세, 날씨 경보, 최신 낙찰 결과, 중요한 뉴스 — 그리고 그것이 당신의 구매에 무엇을 뜻하는지 한 문단으로. AI 애널리스트가 상시 해석 규칙에 따라 데이터에서 직접 당신의 언어로 작성하고, 사람 편집자가 검토합니다.",
+  "smp.lead2":"실제 발행분에서 발췌 →","smp.head":"BeanMonitor 일간 — 7월 31일 금요일 · 07:00",
+  "smp.t1":"오늘의 요약",
+  "smp.p1":"아라비카는 +3.1% 상승 후 335.9센트/lb로 중간 구간(52번째 백분위)을 유지하고 있습니다. 신호는 산지에 있습니다. 미나스제라이스는 수확기에 계절 평년 대비 1978%의 강수를 기록했고, 강한 헤알(USD/BRL 18번째 백분위)이 브라질 판매자들을 관망하게 만들고 있습니다. 둘 다 가격을 지지하는 요인입니다.",
+  "smp.t2":"오늘 구매에서 중요한 것",
+  "smp.p2":"건조 중인 브라질 로트의 강우 관련 품질 리스크가 향후 7~14일 관찰 변수입니다. 안정적인 산지는 현재 수준에서 서두를 이유가 크지 않으며, 투기보다 확정된 수요를 우선하는 편이 좋습니다.",
+  "smp.t3":"요약","smp.tag1":"[경매]","smp.tag2":"[이해관계 있음]",
+  "smp.b1":"El Injerto I(게이샤 내추럴, 91.86)가 449.10달러/lb에 낙찰 — 과테말라 COE",
+  "smp.b2":"수입사: 「브라질 — 9월 전에 예약할 가치가 있는 이유」",
+  "smp.b3":"페어트레이드, 2026년 12월부터 커피 최저가격 인상",
+  "smp.foot":"독립적인 분석: BeanMonitor는 커피를 판매하지 않습니다.",
+  "how.eyebrow":"작동 방식","how.h2":"산지에서 받은편지함까지, 당신이 일어나기 전에",
+  "how.t1":"05:00 UTC — 수집","how.h31":"시스템이 시장을 읽습니다","how.p1":"가격, 산지 기상 9개 지점, 경매 10개 페이지, 언론 8개 피드 — 수집하고 정리해 계속 커지는 히스토리 데이터베이스에 저장합니다.",
+  "how.t2":"05:01 UTC — 분석","how.h32":"AI 애널리스트가 작성합니다","how.p2":"상시 해석 규칙(환율 방향, 날씨와 평년값 비교, 출처의 이해관계)에 따라 각 구독자의 언어로 직접 작성합니다. 번역이 아닙니다.",
+  "how.t3":"07:00 — 발송","how.h33":"브리핑이 도착합니다","how.p3":"이메일이 먼저입니다. 대시보드, API, MCP 접근은 시즌 중 Pro와 Team에 순차 제공됩니다.",
+  "agent.l1":"당신의 AI 에이전트도 읽을 수 있습니다.","agent.l2":"기계 판독 접근은 Team 플랜에 포함됩니다.",
+  "pri.eyebrow":"요금","pri.h2":"타이밍을 놓친 한 자루보다 쌉니다",
+  "pri.free":"무료","pri.f1":"주간 브리핑, 매주 월요일","pri.f2":"언어 선택 가능","pri.f3":"카드 불필요, 언제든 해지","pri.fcta":"무료 브리핑 받기",
+  "pri.tag":"창립 멤버 · 총 49석","pri.pro":"Pro","pri.mo":"/월","pri.locked":"선착순 49명 평생 고정 가격",
+  "pri.p1":"일간 브리핑, 매일 아침","pri.p2":"날씨·가격 실시간 알림","pri.p3":"경매 데이터베이스 및 히스토리 전체","pri.p4":"신규 산지 우선 제공(다음은 말차와 카카오)",
+  "pri.pcta":"창립 멤버석 확보 — 월 19달러",
+  "pri.team":"Team + API","pri.mo2":"/월","pri.t1":"Pro 전체 기능, 5인 사용","pri.t2":"API 및 인증 MCP 접근","pri.t3":"산지별 디퍼렌셜(v2)","pri.tcta":"문의하기",
+  "pri.guarantee":"30일 환불 보장, 이유 불문 · 14일 Pro 체험, 카드 불필요 · 창립 멤버석은 선착순입니다.",
+  "spo.eyebrow":"파트너","spo.h2":"스폰서는 하나. 명확히 표시. 분석에는 절대 개입 없음.",
+  "spo.p":"분기당 스폰서 자리는 단 하나입니다. 로스터를 대상으로 하는 브랜드가 6개 언어로 생두 구매자에게 닿습니다. 스폰서십으로 살 수 있는 것은 「제공:」 표기뿐이며, 분석의 단 한 단어도 살 수 없습니다. 그것이 우리의 존재 이유입니다.",
+  "spo.a":"창립 스폰서 되기 →",
+  "faq.eyebrow":"FAQ","faq.h2":"당연한 질문들",
+  "faq.q1":"수입사에서 이미 무료 마켓 리포트를 보내줍니다. 왜 유료로 봐야 하나요?",
+  "faq.a1":"그들은 커피를 팔고 우리는 팔지 않기 때문입니다. 수입사의 분석은 종종 훌륭하며 우리도 읽고 전달합니다. 하지만 판매자가 「지금이 살 때」라고 말한다면 그것은 이해관계가 있는 의견이고, 우리는 그렇게 표시합니다. BeanMonitor는 격주가 아니라 매일, PDF 산문이 아니라 구조화된 데이터이며, 당신의 구매에 어떤 포지션도 갖지 않습니다.",
+  "faq.q2":"데이터는 어디서 오나요?",
+  "faq.a2":"거래소 가격(참고치), 2019~2025년 평년값과 비교한 Open-Meteo 기상 모델, Alliance for Coffee Excellence의 공개 결과 페이지, 업계 8개 매체의 RSS 피드입니다. 출처는 매 브리핑 하단에 명시합니다.",
+  "faq.q3":"브리핑이 정말 제 언어로 작성되나요?",
+  "faq.a3":"네 — 번역이 아니라 작성입니다. 각 언어판은 당일 데이터에서 직접 생성되므로, 한국어 구독자는 기계번역된 영어가 아니라 자연스러운 한국어를 읽습니다. 영어와 프랑스어는 현재 제공 중이며, 다른 언어는 구독자 요청에 따라 활성화됩니다.",
+  "faq.q4":"AI는 어떻게 쓰이며 믿을 수 있나요?",
+  "faq.a4":"AI는 서술을 작성할 뿐 사실을 만들어내지 않습니다. 모든 수치는 수집된 데이터에서 나오고, 애널리스트는 상시 해석 규칙(환율 방향, 날씨와 계절 평년값 비교, 출처의 이해관계)에 따라 작동하며, 사람 편집자가 결과를 검토하고 어색한 부분이 있으면 규칙을 강화합니다. 모든 브리핑에 AI 생성임을 명시합니다. 거래 전 반드시 확인하세요.",
+  "faq.q5":"저와 맞지 않으면요?",
+  "faq.a5":"카드 없이 14일 Pro 체험, 이후 이유 불문 30일 환불 보장. 해지는 두 번의 클릭이면 됩니다. 무료 주간 브리핑은 계속 무료입니다.",
+  "faq.q6":"다음 계획은 무엇인가요?",
+  "faq.a6":"같은 엔진으로 인접한 위기를 다룹니다. 말차 모니터(공급난이 카페 메뉴를 바꾸고 있습니다)와 bean-to-bar 제작자를 위한 카카오 모니터, 그리고 Team용 대시보드·API·MCP 접근입니다. 창립 구독자는 새 분야를 가장 먼저 이용합니다.",
+  "faq.q7":"커피를 팔거나 수수료를 받거나 트레이딩을 하나요?",
+  "faq.a7":"모두 아닙니다. 커피 판매 없음, 로트나 장비에 대한 제휴 수수료 없음, 포지션 없음. 명확히 표시된 스폰서 자리 하나가 유일한 상업적 관계이며, 분석에는 절대 개입하지 않습니다. 이것은 투자 자문이 아닙니다.",
+  "foot.ind":"독립적인 분석: BeanMonitor는 커피를 판매하지 않습니다.","foot.contact":"문의","foot.soon":"곧: 말차 · 카카오","foot.docs":"llms.txt · API 문서 · 상태 — Team 제공",
+  "foot.legal":"시장 데이터는 참고용 정보이며 투자 자문이 아닙니다."
+ }
+};
+
+var EN = {};
+(function(){
+  document.querySelectorAll('[data-i18n]').forEach(function(el){ EN[el.getAttribute('data-i18n')] = el.innerHTML; });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){ EN[el.getAttribute('data-i18n-ph')] = el.placeholder; });
+})();
+
+function setLang(code){
+  var dict = (code === 'en') ? EN : (I18N[code] || EN);
+  document.querySelectorAll('[data-i18n]').forEach(function(el){
+    var k = el.getAttribute('data-i18n');
+    if (dict[k]) el.innerHTML = dict[k]; else if (EN[k]) el.innerHTML = EN[k];
+  });
+  document.querySelectorAll('[data-i18n-ph]').forEach(function(el){
+    var k = el.getAttribute('data-i18n-ph');
+    el.placeholder = dict[k] || EN[k] || el.placeholder;
+  });
+  document.documentElement.lang = code;
+  document.body.setAttribute('data-lang', code);
+  document.getElementById('lang-nav').value = code;
+  var bl = document.getElementById('brief-lang');
+  if (bl) bl.value = code;
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.setAttribute('aria-current', b.getAttribute('data-setlang') === code ? 'true' : 'false');
+  });
+  try { history.replaceState(null, '', '?lang=' + code); } catch(e){}
+}
+
+(function(){
+  document.getElementById('lang-nav').addEventListener('change', function(e){ setLang(e.target.value); });
+  document.querySelectorAll('[data-setlang]').forEach(function(b){
+    b.addEventListener('click', function(){ setLang(b.getAttribute('data-setlang')); });
+  });
+  var params = new URLSearchParams(location.search);
+  var want = params.get('lang');
+  if (!want){
+    var nav = (navigator.language || 'en').slice(0,2).toLowerCase();
+    if (I18N[nav]) want = nav;
+  }
+  if (want && (want === 'en' || I18N[want])) setLang(want);
+})();
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+(function(){ var t = document.getElementById('tape-track'); t.innerHTML += t.innerHTML; })();
+
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var targets = document.querySelectorAll('h2, p.lead, .sheet, .steps, .plans, .email-mock, .faq, .sponsor, .founder-chip');
+  targets.forEach(function(el){ el.classList.add('reveal'); });
+  if (reduce){ targets.forEach(function(el){ el.classList.add('in'); }); return; }
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(en){ if (en.isIntersecting){ en.target.classList.add('in'); io.unobserve(en.target); } });
+  }, { threshold: 0.12 });
+  targets.forEach(function(el){ io.observe(el); });
+})();
+
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv = document.getElementById('beans'), ctx = cv.getContext('2d'), w, h, beans = [];
+  function size(){
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = window.innerWidth; h = window.innerHeight;
+    cv.width = w * dpr; cv.height = h * dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  size(); window.addEventListener('resize', size);
+  var N = Math.min(24, Math.floor(w / 60));
+  for (var i = 0; i < N; i++){
+    beans.push({x:Math.random()*w, y:Math.random()*h, s:5+Math.random()*11, a:Math.random()*6.28,
+      va:(Math.random()-.5)*0.004, vx:(Math.random()-.5)*0.20, vy:-(0.07+Math.random()*0.20), o:0.05+Math.random()*0.09});
+  }
+  function drawBean(b){
+    ctx.save(); ctx.translate(b.x,b.y); ctx.rotate(b.a); ctx.globalAlpha=b.o; ctx.fillStyle='#79A15C';
+    ctx.beginPath(); ctx.ellipse(0,0,b.s*0.72,b.s,0,0,6.2832); ctx.fill();
+    ctx.globalAlpha=b.o*1.6; ctx.strokeStyle='#0E1310'; ctx.lineWidth=Math.max(1,b.s*0.16);
+    ctx.beginPath(); ctx.moveTo(0,-b.s*0.92); ctx.quadraticCurveTo(-b.s*0.45,0,0,b.s*0.92); ctx.stroke(); ctx.restore();
+  }
+  function frame(){
+    ctx.clearRect(0,0,w,h);
+    for (var i=0;i<beans.length;i++){
+      var b=beans[i]; b.x+=b.vx; b.y+=b.vy; b.a+=b.va;
+      if (b.y<-30){ b.y=h+30; b.x=Math.random()*w; }
+      if (b.x<-30) b.x=w+30; if (b.x>w+30) b.x=-30;
+      drawBean(b);
+    }
+  }
+  if (reduce){ frame(); return; }
+  (function loop(){ frame(); requestAnimationFrame(loop); })();
+})();
+
+(function(){
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var cv = document.getElementById('isobars'), ctx = cv.getContext('2d'), w, h, t = 0;
+  function size(){
+    var r = cv.parentElement.getBoundingClientRect();
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    w = r.width; h = r.height; cv.width = w*dpr; cv.height = h*dpr; ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  size(); window.addEventListener('resize', size);
+  function field(x,y,tt){
+    return Math.sin(x*0.004+tt*0.4) + Math.sin(y*0.006-tt*0.23) +
+           Math.sin((x+y)*0.0032+tt*0.15) + Math.sin(Math.hypot(x-w*0.72,y-h*0.28)*0.006-tt*0.3);
+  }
+  function draw(){
+    ctx.clearRect(0,0,w,h);
+    var levels=8, step=8;
+    for (var L=0; L<levels; L++){
+      var iso=-2.6+L*(5.2/levels);
+      ctx.beginPath();
+      for (var y=0; y<h; y+=step){
+        var started=false;
+        for (var x=0; x<w; x+=step){
+          var v=field(x,y,t), vn=field(x+step,y,t);
+          if ((v-iso)*(vn-iso)<0){
+            var fx=x+step*(iso-v)/(vn-v);
+            if (!started){ ctx.moveTo(fx,y); started=true; } else ctx.lineTo(fx,y);
+          }
+        }
+      }
+      ctx.strokeStyle='rgba(146,198,112,'+(0.16+L*0.035)+')'; ctx.lineWidth=1.5; ctx.stroke();
+    }
+  }
+  if (reduce){ t=3.7; draw(); return; }
+  (function loop(){ t+=0.010; draw(); requestAnimationFrame(loop); })();
+})();
+</script>
+</body>
+</html>
