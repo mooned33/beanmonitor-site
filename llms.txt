@@ -1,0 +1,38 @@
+# BeanMonitor
+
+> Independent daily market intelligence for the specialty coffee trade.
+> We do not sell coffee — we read the market for the people who buy it.
+
+BeanMonitor collects, structures and interprets specialty coffee market data every
+morning, then publishes a daily brief written natively in the subscriber's language.
+
+## What we track
+
+- **Prices**: ICE Arabica (Coffee C), cocoa, USD/BRL — each reported with 24h and
+  30-day moves and its position in the 52-week range (percentile), not as a bare number.
+- **Origin weather**: 9 GPS points across Minas Gerais (Brazil), Huila (Colombia),
+  Sidama/Gedeo (Ethiopia) and Dak Lak (Vietnam), compared against 2019-2025 seasonal
+  normals rather than raw millimetres.
+- **Auctions**: a structured database of Cup of Excellence results — farm, variety,
+  process, score, final bid, buyer — across 10 origin programmes, updated daily.
+- **Industry press**: 8 publications, ranked by relevance, with importer-published
+  analysis explicitly labelled as an interested source.
+
+## Editorial principles
+
+- BeanMonitor sells no coffee, takes no affiliate commission and holds no positions.
+- Analysis is AI-written from collected data under standing interpretation rules,
+  reviewed by a human editor. Every brief is labelled as AI-generated.
+- Market data is indicative and informational. Nothing published is financial advice.
+
+## Access
+
+- Free weekly brief: https://www.beanmonitor.coffee
+- Daily brief (Pro): https://www.beanmonitor.coffee#pricing
+- API and MCP access: planned with the Team plan
+- Contact: hello@beanmonitor.coffee
+
+## Languages
+
+Briefs and site available in English, French, Spanish, Portuguese, Japanese and Korean.
+Each language edition is generated directly from the data, never machine-translated.

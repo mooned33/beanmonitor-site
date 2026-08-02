@@ -1,0 +1,13 @@
+# BeanMonitor — independent specialty coffee market intelligence
+User-agent: *
+Allow: /
+
+# AI agents and crawlers are welcome
+User-agent: GPTBot
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+
+Sitemap: https://www.beanmonitor.coffee/sitemap.xml
