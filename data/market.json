@@ -1,72 +1,72 @@
 {
-  "generatedAt": "2026-09-03T09:26:11.033Z",
+  "generatedAt": "2026-09-04T09:18:37.274Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
-      "price": 296.1,
-      "changePct24h": -9.84,
-      "change30d": -9.4,
+      "price": 297.05,
+      "changePct24h": -8.42,
+      "change30d": -7.6,
       "high52": 432.35,
       "low52": 244.4,
-      "percentile52w": 24,
+      "percentile52w": 25,
       "currency": "USX"
     },
     "cocoa": {
       "symbol": "CC=F",
-      "price": 6309,
-      "changePct24h": 0.88,
+      "price": 6195,
+      "changePct24h": 2.28,
       "change30d": 7.3,
       "high52": 7539,
       "low52": 2798,
-      "percentile52w": 88,
+      "percentile52w": 86,
       "currency": "USD"
     },
     "usdbrl": {
       "symbol": "BRL=X",
-      "price": 5.09,
-      "changePct24h": -1.19,
-      "change30d": -1,
+      "price": 5.1,
+      "changePct24h": 0.26,
+      "change30d": -0.7,
       "high52": 5.59,
       "low52": 4.91,
-      "percentile52w": 18,
+      "percentile52w": 22,
       "currency": "BRL"
     }
   },
   "weather": [
     {
       "region": "Minas Gerais (Bresil, Arabica)",
-      "rain7d": 26.3,
-      "normal7d": 3.8,
-      "pctOfNormal": 692,
-      "minForecast7d": 12.9,
+      "rain7d": 14.4,
+      "normal7d": 2.7,
+      "pctOfNormal": 533,
+      "minForecast7d": 13.8,
       "alerts": [
-        "PLUIES EXCESSIVES : 26.3 mm = 692 % de la normale saisonniere (normale : 3.8 mm)"
+        "PLUIES EXCESSIVES : 14.4 mm = 533 % de la normale saisonniere (normale : 2.7 mm)"
       ]
     },
     {
       "region": "Huila (Colombie, Arabica)",
-      "rain7d": 54.7,
-      "normal7d": 14.6,
-      "pctOfNormal": 375,
-      "minForecast7d": 15.3,
+      "rain7d": 50.8,
+      "normal7d": 12.7,
+      "pctOfNormal": 400,
+      "minForecast7d": 15.4,
       "alerts": [
-        "PLUIES EXCESSIVES : 54.7 mm = 375 % de la normale saisonniere (normale : 14.6 mm)"
+        "PLUIES EXCESSIVES : 50.8 mm = 400 % de la normale saisonniere (normale : 12.7 mm)"
       ]
     },
     {
       "region": "Sidama/Gedeo (Ethiopie, Arabica)",
-      "rain7d": 10.8,
-      "normal7d": 37.4,
-      "pctOfNormal": 29,
-      "minForecast7d": 13.2,
+      "rain7d": 14.5,
+      "normal7d": 39.3,
+      "pctOfNormal": 37,
+      "minForecast7d": 13.4,
       "alerts": []
     },
     {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 78.5,
-      "normal7d": 90.1,
-      "pctOfNormal": 87,
-      "minForecast7d": 21.1,
+      "rain7d": 80.4,
+      "normal7d": 85.1,
+      "pctOfNormal": 94,
+      "minForecast7d": 20.8,
       "alerts": []
     }
   ],
