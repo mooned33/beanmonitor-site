@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T09:08:16.642Z",
+  "generatedAt": "2026-09-07T09:55:52.122Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
@@ -8,7 +8,7 @@
       "change30d": -8.9,
       "high52": 432.35,
       "low52": 244.4,
-      "percentile52w": 21,
+      "percentile52w": 20,
       "currency": "USX"
     },
     "cocoa": {
@@ -35,38 +35,36 @@
   "weather": [
     {
       "region": "Minas Gerais (Bresil, Arabica)",
-      "rain7d": 20,
+      "rain7d": 33.1,
       "normal7d": 2.7,
-      "pctOfNormal": 741,
-      "minForecast7d": 13.5,
+      "pctOfNormal": 1226,
+      "minForecast7d": 13.7,
       "alerts": [
-        "PLUIES EXCESSIVES : 20 mm = 741 % de la normale saisonniere (normale : 2.7 mm)"
+        "PLUIES EXCESSIVES : 33.1 mm = 1226 % de la normale saisonniere (normale : 2.7 mm)"
       ]
     },
     {
       "region": "Huila (Colombie, Arabica)",
-      "rain7d": 44.8,
-      "normal7d": 13.2,
-      "pctOfNormal": 339,
-      "minForecast7d": 15.8,
-      "alerts": [
-        "PLUIES EXCESSIVES : 44.8 mm = 339 % de la normale saisonniere (normale : 13.2 mm)"
-      ]
+      "rain7d": 30.5,
+      "normal7d": 15.5,
+      "pctOfNormal": 197,
+      "minForecast7d": 15.5,
+      "alerts": []
     },
     {
       "region": "Sidama/Gedeo (Ethiopie, Arabica)",
-      "rain7d": 22.3,
-      "normal7d": 43.6,
-      "pctOfNormal": 51,
-      "minForecast7d": 12.4,
+      "rain7d": 24.5,
+      "normal7d": 42.9,
+      "pctOfNormal": 57,
+      "minForecast7d": 12.8,
       "alerts": []
     },
     {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 86.8,
-      "normal7d": 94.2,
-      "pctOfNormal": 92,
-      "minForecast7d": 20.7,
+      "rain7d": 85.1,
+      "normal7d": 98.6,
+      "pctOfNormal": 86,
+      "minForecast7d": 20.6,
       "alerts": []
     }
   ],
