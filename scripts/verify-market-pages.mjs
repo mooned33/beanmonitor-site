@@ -62,10 +62,14 @@ if (minas) {
 
 const homepage = await text("index.html");
 assert(homepage.includes(`${SITE}/`), "homepage www canonical missing");
-assert(!homepage.includes("335.9¢/lb"), "stale homepage Arabica snapshot still present");
-assert(homepage.includes("/coffee-prices/"), "homepage price link missing");
-assert(homepage.includes("/coffee-weather/brazil/minas-gerais/"), "homepage Minas link missing");
-assert(homepage.includes("/cup-of-excellence/2026/"), "homepage COE season link missing");
+const tickerMatch = homepage.match(/<div class="tape-track" id="tape-track">([\s\S]*?)<\/div>\n<\/div>\n\n<section class="band-paper" id="signals">/);
+assert(tickerMatch, "homepage live ticker block missing");
+const ticker = tickerMatch[1];
+assert(!ticker.includes("335.9¢/lb"), "stale Arabica snapshot still present in live ticker");
+assert(ticker.includes(`${Number(data.prices.arabica.price).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}¢/lb`), "current Arabica price missing from live ticker");
+assert(ticker.includes("/coffee-prices/"), "homepage price link missing");
+assert(ticker.includes("/coffee-weather/brazil/minas-gerais/"), "homepage Minas link missing");
+assert(ticker.includes("/cup-of-excellence/2026/"), "homepage COE season link missing");
 
 const brief = await text("coffee-market-brief/index.html");
 assert(brief.includes("https://buttondown.com/api/emails/embed-subscribe/beanmonitor"), "Buttondown form missing from market brief");
