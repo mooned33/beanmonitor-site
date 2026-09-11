@@ -34,17 +34,15 @@
   },
   "weather": [
     {
-      "region": "Minas Gerais (Bresil, Arabica)",
+      "region": "Minas Gerais (Brazil, Arabica)",
       "rain7d": 67.3,
       "normal7d": 2.1,
       "pctOfNormal": 3205,
       "minForecast7d": 13.3,
-      "alerts": [
-        "PLUIES EXCESSIVES : 67.3 mm = 3205 % de la normale saisonniere (normale : 2.1 mm)"
-      ]
+      "alerts": []
     },
     {
-      "region": "Huila (Colombie, Arabica)",
+      "region": "Huila (Colombia, Arabica)",
       "rain7d": 15.1,
       "normal7d": 16.5,
       "pctOfNormal": 92,
@@ -52,7 +50,7 @@
       "alerts": []
     },
     {
-      "region": "Sidama/Gedeo (Ethiopie, Arabica)",
+      "region": "Sidama/Gedeo (Ethiopia, Arabica)",
       "rain7d": 29.3,
       "normal7d": 50.3,
       "pctOfNormal": 58,
@@ -75,5 +73,2424 @@
     "topBidPerLb": 449.1,
     "topFarm": "El Injerto I",
     "topBuyer": "Enwan Coffee"
-  }
+  },
+  "auctionPrograms": [
+    {
+      "slug": "nicaragua-2026",
+      "country": "Nicaragua",
+      "year": 2026,
+      "lots": [
+        {
+          "category": "Natural & Honey",
+          "rank": "1A",
+          "farm": "Los Alpes",
+          "score": 92,
+          "weightLb": 198.42,
+          "bidPerLb": 140,
+          "totalValue": 27778.8,
+          "buyer": "Belco Sas"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "1B",
+          "farm": "Los Alpes",
+          "score": 92,
+          "weightLb": 168.65,
+          "bidPerLb": 138.2,
+          "totalValue": 23307.43,
+          "buyer": "ECOM Japan Limited. for manucoffee, NOZY COFFEE, hugcoffee, ocamicoffee"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "2",
+          "farm": "San Jose De La Rosa",
+          "score": 90.06,
+          "weightLb": 456.36,
+          "bidPerLb": 31,
+          "totalValue": 14147.16,
+          "buyer": "C&B coffee roasters"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "3",
+          "farm": "Los Suyates",
+          "score": 89.19,
+          "weightLb": 462.97,
+          "bidPerLb": 15.3,
+          "totalValue": 7083.44,
+          "buyer": "Cafe Kreyol, Two Hands Full and Tatido Coffee Roasters"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "4",
+          "farm": "Fila Quemada",
+          "score": 88.81,
+          "weightLb": 460.32,
+          "bidPerLb": 13.3,
+          "totalValue": 6122.26,
+          "buyer": "Cafe Kreyol"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "5",
+          "farm": "Brisas Del Mogoton",
+          "score": 88.69,
+          "weightLb": 396.83,
+          "bidPerLb": 14,
+          "totalValue": 5555.62,
+          "buyer": "Saerin co.,Ltd (MOGIPOGROUND) Sangroksu Light Roasting House, PAUSA COFFEE ROASTERS"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "6",
+          "farm": "El Rosario",
+          "score": 88.11,
+          "weightLb": 529.11,
+          "bidPerLb": 21.4,
+          "totalValue": 11322.95,
+          "buyer": "Sarutahiko Coffee Inc."
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "7",
+          "farm": "El Avion",
+          "score": 88.06,
+          "weightLb": 462.97,
+          "bidPerLb": 13.2,
+          "totalValue": 6111.2,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "8",
+          "farm": "Un Regalo De Dios",
+          "score": 88,
+          "weightLb": 529.11,
+          "bidPerLb": 21.9,
+          "totalValue": 11587.51,
+          "buyer": "CAMEL COFFEE CO.,LTD. (KALDI COFFEE FARM)"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "9",
+          "farm": "Finca Paraiso",
+          "score": 88,
+          "weightLb": 393.3,
+          "bidPerLb": 19.1,
+          "totalValue": 7512.03,
+          "buyer": "Sulalat"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "10",
+          "farm": "Elite",
+          "score": 87.94,
+          "weightLb": 396.83,
+          "bidPerLb": 19.1,
+          "totalValue": 7579.45,
+          "buyer": "TRUTH ROASTERY"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "11",
+          "farm": "La Bendicion",
+          "score": 87.94,
+          "weightLb": 462.97,
+          "bidPerLb": 14.1,
+          "totalValue": 6527.88,
+          "buyer": "Fadie Sasaguri Roastery Corporation"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "12",
+          "farm": "El Porvenir",
+          "score": 87.72,
+          "weightLb": 1124.36,
+          "bidPerLb": 15.4,
+          "totalValue": 17315.14,
+          "buyer": "TAKAMURA COFFEE ROASTERS and SHRUB COFFEE by Marukai"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "13",
+          "farm": "El Volcan",
+          "score": 87.67,
+          "weightLb": 462.97,
+          "bidPerLb": 17.9,
+          "totalValue": 8287.16,
+          "buyer": "TRUTH ROASTERY"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "14",
+          "farm": "Finca Libre",
+          "score": 87.56,
+          "weightLb": 529.11,
+          "bidPerLb": 13.9,
+          "totalValue": 7354.63,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "15",
+          "farm": "La Aurora",
+          "score": 87.44,
+          "weightLb": 453.27,
+          "bidPerLb": 11.1,
+          "totalValue": 5031.3,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "16",
+          "farm": "Los Congos",
+          "score": 87.28,
+          "weightLb": 661.39,
+          "bidPerLb": 10.1,
+          "totalValue": 6680.04,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "17",
+          "farm": "El Deseo",
+          "score": 87.17,
+          "weightLb": 330.69,
+          "bidPerLb": 11.1,
+          "totalValue": 3670.66,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "18",
+          "farm": "San Isidro",
+          "score": 87.11,
+          "weightLb": 793.66,
+          "bidPerLb": 6.8,
+          "totalValue": 5396.89,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "1A",
+          "farm": "El Cambalache",
+          "score": 91.44,
+          "weightLb": 198.42,
+          "bidPerLb": 67.7,
+          "totalValue": 13433.03,
+          "buyer": "Coffee Me Up (Korea), TWO HANDS FULL (Indonesia), Cafe Kreyol, Shyghost coffeelab, Citric meets Malic"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "1B",
+          "farm": "El Cambalache",
+          "score": 91.44,
+          "weightLb": 188.98,
+          "bidPerLb": 67.8,
+          "totalValue": 12812.84,
+          "buyer": "Canasto Coffee Co. for Luce Avenue Coffee Roasters, Terraform Coffee Roasters, CHG（手多多咖啡）, TGIF, Moonway Coffee Roaster, 29 Coffee"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "2",
+          "farm": "La Furiosa",
+          "score": 89.38,
+          "weightLb": 755.52,
+          "bidPerLb": 20.9,
+          "totalValue": 15790.37,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "3",
+          "farm": "Puma-punku",
+          "score": 89.13,
+          "weightLb": 661.39,
+          "bidPerLb": 13.5,
+          "totalValue": 8928.77,
+          "buyer": "Sarutahiko Coffee Inc."
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "4",
+          "farm": "El Arbol",
+          "score": 88.69,
+          "weightLb": 449.26,
+          "bidPerLb": 14,
+          "totalValue": 6289.64,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "5",
+          "farm": "El Poste",
+          "score": 87.89,
+          "weightLb": 595.25,
+          "bidPerLb": 13.3,
+          "totalValue": 7916.83,
+          "buyer": "Ecofarm Coffee(China) for 0566 珈琲製作所/ 0566 COFFEE"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "6",
+          "farm": "Buenos Aires",
+          "score": 87.61,
+          "weightLb": 488.76,
+          "bidPerLb": 14,
+          "totalValue": 6842.64,
+          "buyer": "Cafe Integral"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "7",
+          "farm": "Las Hortencias",
+          "score": 87.5,
+          "weightLb": 684.53,
+          "bidPerLb": 13.4,
+          "totalValue": 9172.7,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "8",
+          "farm": "La Laguna",
+          "score": 87.39,
+          "weightLb": 661.39,
+          "bidPerLb": 11.4,
+          "totalValue": 7539.85,
+          "buyer": "Wataru & Co., Ltd. for OGAWA COFFEE"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "9",
+          "farm": "Santa María 2",
+          "score": 87.17,
+          "weightLb": 661.39,
+          "bidPerLb": 14.1,
+          "totalValue": 9325.6,
+          "buyer": "Fadie Sasaguri Roastery Corporation"
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "10",
+          "farm": "El Renacer",
+          "score": 87,
+          "weightLb": 725.98,
+          "bidPerLb": 12.1,
+          "totalValue": 8784.36,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Washed Processes",
+          "rank": "11",
+          "farm": "Cooperativa Solidaridad",
+          "score": 87,
+          "weightLb": 1225.99,
+          "bidPerLb": 6.5,
+          "totalValue": 7968.94,
+          "buyer": "Kaffebrenneriet as"
+        }
+      ]
+    },
+    {
+      "slug": "el-salvador-2026",
+      "country": "El Salvador",
+      "year": 2026,
+      "lots": [
+        {
+          "category": "Washed + Honey",
+          "rank": "1A",
+          "farm": "La Esperanza",
+          "score": 91.95,
+          "weightLb": 469,
+          "bidPerLb": 41.2,
+          "totalValue": 19322.8,
+          "buyer": "L.TONE"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "1B",
+          "farm": "La Esperanza",
+          "score": 91.95,
+          "weightLb": 469,
+          "bidPerLb": 41,
+          "totalValue": 19229,
+          "buyer": "TRUTH ROASTERY"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "2",
+          "farm": "Reyes",
+          "score": 90.88,
+          "weightLb": 806.28,
+          "bidPerLb": 25.1,
+          "totalValue": 20237.63,
+          "buyer": "Boqueron火萨，Prussian Blue coffee，Bean2cup Coffee，Mindfo Coffee，KOMENCU COFFEE（启程），咖啡自留地 (CoffeeCorner) 银厅咖啡 (Yinting Cafe)"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "3",
+          "farm": "Los Cipreces",
+          "score": 90.45,
+          "weightLb": 504.55,
+          "bidPerLb": 20.2,
+          "totalValue": 10191.91,
+          "buyer": "C&B coffee roasters"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "4",
+          "farm": "Finca Ethiopia",
+          "score": 88.65,
+          "weightLb": 304.73,
+          "bidPerLb": 28.4,
+          "totalValue": 8654.33,
+          "buyer": "NOZY COFFEE / TYSONS&COMPANY"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "5",
+          "farm": "Santa Rosa",
+          "score": 88.55,
+          "weightLb": 332.7,
+          "bidPerLb": 37.1,
+          "totalValue": 12343.17,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "6",
+          "farm": "Don Jaime",
+          "score": 88.45,
+          "weightLb": 404.64,
+          "bidPerLb": 20.1,
+          "totalValue": 8133.26,
+          "buyer": "GSC International Co., Ltd."
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "7",
+          "farm": "Mileydi",
+          "score": 88.35,
+          "weightLb": 1216,
+          "bidPerLb": 19.9,
+          "totalValue": 24198.4,
+          "buyer": "Alchemist, Wataru & Co., Ltd, Cherries, Ryans Coffee Roasters. Plus Trunk Coffee Roasters by Blossom Valley. Linking Coffee Taiwan. Bean & Bean. Un caffe. MAGE Coffee"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "8",
+          "farm": "Miramar",
+          "score": 87.95,
+          "weightLb": 356.68,
+          "bidPerLb": 16,
+          "totalValue": 5706.88,
+          "buyer": "MI Coffee Corporation"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "9",
+          "farm": "Campo Bello",
+          "score": 87.95,
+          "weightLb": 425.62,
+          "bidPerLb": 20.6,
+          "totalValue": 8767.77,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Washed + Honey",
+          "rank": "10",
+          "farm": "Los Morales",
+          "score": 87.45,
+          "weightLb": 826.26,
+          "bidPerLb": 14.7,
+          "totalValue": 12146.02,
+          "buyer": "Kaffebrenneriet as"
+        },
+        {
+          "category": "Natural",
+          "rank": "1A",
+          "farm": "Los Morales",
+          "score": 91.7,
+          "weightLb": 220,
+          "bidPerLb": 40.2,
+          "totalValue": 8844,
+          "buyer": "Ecofarm Coffee(China) for nam·é coffee roaster, 陆光咖啡 Luguangcafe, LL Roaster青逸贸易"
+        },
+        {
+          "category": "Natural",
+          "rank": "1B",
+          "farm": "Los Morales",
+          "score": 91.7,
+          "weightLb": 220,
+          "bidPerLb": 45.1,
+          "totalValue": 9922,
+          "buyer": "PLUSONE COFFEE"
+        },
+        {
+          "category": "Natural",
+          "rank": "2",
+          "farm": "El Conacaste",
+          "score": 91.48,
+          "weightLb": 429.61,
+          "bidPerLb": 40,
+          "totalValue": 17184.4,
+          "buyer": "Carlton Greer"
+        },
+        {
+          "category": "Natural",
+          "rank": "3",
+          "farm": "Santa Sofia",
+          "score": 90.1,
+          "weightLb": 716.36,
+          "bidPerLb": 29.6,
+          "totalValue": 21204.26,
+          "buyer": "Sarutahiko Coffee Inc."
+        },
+        {
+          "category": "Natural",
+          "rank": "4",
+          "farm": "Finca La Montaña",
+          "score": 88.45,
+          "weightLb": 824.26,
+          "bidPerLb": 16.5,
+          "totalValue": 13600.29,
+          "buyer": "honu加藤珈琲店株式会社"
+        },
+        {
+          "category": "Natural",
+          "rank": "5",
+          "farm": "El Guaje",
+          "score": 87.9,
+          "weightLb": 491.56,
+          "bidPerLb": 17.1,
+          "totalValue": 8405.68,
+          "buyer": "CAFFE PASCUCCI"
+        },
+        {
+          "category": "Natural",
+          "rank": "6",
+          "farm": "Siberia",
+          "score": 87.25,
+          "weightLb": 529.52,
+          "bidPerLb": 17.1,
+          "totalValue": 9054.79,
+          "buyer": "Ecofarm Coffee(China) for MAMEHOLIC"
+        },
+        {
+          "category": "Natural",
+          "rank": "7",
+          "farm": "El Angel",
+          "score": 87.23,
+          "weightLb": 808.27,
+          "bidPerLb": 16.6,
+          "totalValue": 13417.28,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Experimental",
+          "rank": "1A",
+          "farm": "San Andres",
+          "score": 90.55,
+          "weightLb": 280,
+          "bidPerLb": 55.2,
+          "totalValue": 15456,
+          "buyer": "GLITCH COFFEE & ROASTERS by Marukai"
+        },
+        {
+          "category": "Experimental",
+          "rank": "1B",
+          "farm": "San Andres",
+          "score": 90.55,
+          "weightLb": 280,
+          "bidPerLb": 54.7,
+          "totalValue": 15316,
+          "buyer": "Thevillage SA"
+        },
+        {
+          "category": "Experimental",
+          "rank": "2",
+          "farm": "El Carmen",
+          "score": 90.13,
+          "weightLb": 317,
+          "bidPerLb": 30.7,
+          "totalValue": 9731.9,
+          "buyer": "Decameron Coffee十日谈"
+        },
+        {
+          "category": "Experimental",
+          "rank": "3",
+          "farm": "El Cerro",
+          "score": 89.6,
+          "weightLb": 815,
+          "bidPerLb": 18.1,
+          "totalValue": 14751.5,
+          "buyer": "30 Wet Company"
+        },
+        {
+          "category": "Experimental",
+          "rank": "4",
+          "farm": "Las Duanas",
+          "score": 89,
+          "weightLb": 208.01,
+          "bidPerLb": 25.3,
+          "totalValue": 5262.65,
+          "buyer": "SIXTY COFFEE EGYPT"
+        },
+        {
+          "category": "Experimental",
+          "rank": "5",
+          "farm": "El Derrumbe",
+          "score": 88.4,
+          "weightLb": 1087.01,
+          "bidPerLb": 14.6,
+          "totalValue": 15870.35,
+          "buyer": "honu加藤珈琲店株式会社"
+        },
+        {
+          "category": "Experimental",
+          "rank": "6",
+          "farm": "Santa Rita",
+          "score": 88.35,
+          "weightLb": 457,
+          "bidPerLb": 17.1,
+          "totalValue": 7814.7,
+          "buyer": "Kaffebrenneriet as"
+        },
+        {
+          "category": "Experimental",
+          "rank": "7",
+          "farm": "La Cascada",
+          "score": 88.28,
+          "weightLb": 735,
+          "bidPerLb": 14.8,
+          "totalValue": 10878,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Experimental",
+          "rank": "8",
+          "farm": "Las Brumas",
+          "score": 88.15,
+          "weightLb": 273,
+          "bidPerLb": 47.6,
+          "totalValue": 12994.8,
+          "buyer": "Thevillage SA"
+        },
+        {
+          "category": "Experimental",
+          "rank": "9",
+          "farm": "Santa Elena",
+          "score": 88,
+          "weightLb": 420,
+          "bidPerLb": 15,
+          "totalValue": 6300,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Experimental",
+          "rank": "10",
+          "farm": "Los Naranjos",
+          "score": 87.9,
+          "weightLb": 545,
+          "bidPerLb": 15,
+          "totalValue": 8175,
+          "buyer": "Linking Coffee Co., Ltd."
+        },
+        {
+          "category": "Experimental",
+          "rank": "11",
+          "farm": "El Manantial",
+          "score": 87.6,
+          "weightLb": 535,
+          "bidPerLb": 14.9,
+          "totalValue": 7971.5,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Experimental",
+          "rank": "12",
+          "farm": "Las Duanas",
+          "score": 87.2,
+          "weightLb": 183.01,
+          "bidPerLb": 17.1,
+          "totalValue": 3129.47,
+          "buyer": "SHRUB COFFEE by Marukai"
+        }
+      ]
+    },
+    {
+      "slug": "costa-rica-2026",
+      "country": "Costa Rica",
+      "year": 2026,
+      "lots": [
+        {
+          "category": "Washed",
+          "rank": "1A",
+          "farm": "Río Blanco",
+          "score": 91.36,
+          "weightLb": 264.55,
+          "bidPerLb": 200.1,
+          "totalValue": 52936.46,
+          "buyer": "Enwan Coffee"
+        },
+        {
+          "category": "Washed",
+          "rank": "1B",
+          "farm": "Río Blanco",
+          "score": 91.36,
+          "weightLb": 264.55,
+          "bidPerLb": 200.1,
+          "totalValue": 52936.46,
+          "buyer": "Enwan Coffee"
+        },
+        {
+          "category": "Washed",
+          "rank": "2",
+          "farm": "El Roble",
+          "score": 91.32,
+          "weightLb": 595.24,
+          "bidPerLb": 80,
+          "totalValue": 47619.2,
+          "buyer": "Ecofarm Coffee(China) for CaptainGeorge / Terraform Coffee/ nam·é coffee roaster / RightPaw Coffee/Prussian Blue Coffee/咖乐乐KolaKola/Taster’s coffee 南京饕選"
+        },
+        {
+          "category": "Washed",
+          "rank": "3",
+          "farm": "El Cedro – Hacienda San Isidro Labrador",
+          "score": 90.67,
+          "weightLb": 529.1,
+          "bidPerLb": 60.5,
+          "totalValue": 32010.55,
+          "buyer": "CHG(手多多咖啡) & TWO HANDS FULL (Indonesia) & Carlton Greer & GABEE COFFEE & Citric meets Malic & Superbeans Import & SHRUB COFFEE(Japan) & BEAM SPECIALTY"
+        },
+        {
+          "category": "Washed",
+          "rank": "4",
+          "farm": "David",
+          "score": 88.89,
+          "weightLb": 1058.21,
+          "bidPerLb": 51.1,
+          "totalValue": 54074.53,
+          "buyer": "Thevillage SA"
+        },
+        {
+          "category": "Washed",
+          "rank": "5",
+          "farm": "La Bandera",
+          "score": 88.89,
+          "weightLb": 727.52,
+          "bidPerLb": 35.9,
+          "totalValue": 26117.97,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Washed",
+          "rank": "6",
+          "farm": "Santa Teresa",
+          "score": 88.83,
+          "weightLb": 529.1,
+          "bidPerLb": 35.6,
+          "totalValue": 18835.96,
+          "buyer": "TAKAMURA COFFEE ROASTERS and SHRUB COFFEE by Marukai"
+        },
+        {
+          "category": "Washed",
+          "rank": "7",
+          "farm": "La Casita De La Esperanza",
+          "score": 88.72,
+          "weightLb": 562.17,
+          "bidPerLb": 27.1,
+          "totalValue": 15234.81,
+          "buyer": "honu加藤珈琲店株式会社"
+        },
+        {
+          "category": "Washed",
+          "rank": "8",
+          "farm": "Leoncio",
+          "score": 88.56,
+          "weightLb": 496.04,
+          "bidPerLb": 24.6,
+          "totalValue": 12202.58,
+          "buyer": "GSC International Co., Ltd."
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "1A",
+          "farm": "Las Nubes",
+          "score": 91.06,
+          "weightLb": 264.55,
+          "bidPerLb": 95,
+          "totalValue": 25132.25,
+          "buyer": "Enwan Coffee"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "1B",
+          "farm": "Las Nubes",
+          "score": 91.06,
+          "weightLb": 264.55,
+          "bidPerLb": 95,
+          "totalValue": 25132.25,
+          "buyer": "Enwan Coffee"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "2",
+          "farm": "Don Cayito",
+          "score": 90.89,
+          "weightLb": 562.17,
+          "bidPerLb": 52.2,
+          "totalValue": 29345.27,
+          "buyer": "Ecofarm Coffee(China) for Lagooon Coffee百灵岛咖啡"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "3",
+          "farm": "Río Blanco",
+          "score": 90.61,
+          "weightLb": 496.04,
+          "bidPerLb": 48.6,
+          "totalValue": 24107.54,
+          "buyer": "C&B Coffee Roasters"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "4",
+          "farm": "Fcj Volcan Azul",
+          "score": 89.44,
+          "weightLb": 562.17,
+          "bidPerLb": 35.3,
+          "totalValue": 19844.6,
+          "buyer": "INSEASON音季咖啡, 福咖儿咖啡, 金领结咖啡, JAUNATIS CAFFE, KENO BREW"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "5",
+          "farm": "Quebrada Grande",
+          "score": 89.39,
+          "weightLb": 529.1,
+          "bidPerLb": 25.8,
+          "totalValue": 13650.78,
+          "buyer": "SUPREMO COFFEE"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "6",
+          "farm": "La Fila",
+          "score": 89.33,
+          "weightLb": 760.59,
+          "bidPerLb": 30.1,
+          "totalValue": 22893.76,
+          "buyer": "Ecofarm Coffee(China) for MAMEHOLI"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "7",
+          "farm": "Finca Matilde",
+          "score": 89.22,
+          "weightLb": 529.1,
+          "bidPerLb": 23.7,
+          "totalValue": 12539.67,
+          "buyer": "Black Sip Coffee Roasters"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "8",
+          "farm": "El Cusuco",
+          "score": 89.06,
+          "weightLb": 595.24,
+          "bidPerLb": 35,
+          "totalValue": 20833.4,
+          "buyer": "Breehant Roastery"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "9",
+          "farm": "Finca 45 ° V",
+          "score": 88.89,
+          "weightLb": 496.04,
+          "bidPerLb": 29.8,
+          "totalValue": 14781.99,
+          "buyer": "ORO ROASTERS"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "10",
+          "farm": "El Cola Roja",
+          "score": 88.78,
+          "weightLb": 529.1,
+          "bidPerLb": 25.6,
+          "totalValue": 13544.96,
+          "buyer": "30 Wet Company"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "11",
+          "farm": "La Planada",
+          "score": 88.78,
+          "weightLb": 496.04,
+          "bidPerLb": 24.6,
+          "totalValue": 12202.58,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Natural + Honey",
+          "rank": "12",
+          "farm": "Finca El Centro",
+          "score": 88.44,
+          "weightLb": 529.1,
+          "bidPerLb": 24.8,
+          "totalValue": 13121.68,
+          "buyer": "TRUTH ROASTERY"
+        },
+        {
+          "category": "Experimental",
+          "rank": "1A",
+          "farm": "Las Margaritas Veintiséis",
+          "score": 91.06,
+          "weightLb": 231.49,
+          "bidPerLb": 110.4,
+          "totalValue": 25556.5,
+          "buyer": "IngenuityCoffee印格咖啡 for GEE COFFEE, Orsir Coffee, HWC COFFEE"
+        },
+        {
+          "category": "Experimental",
+          "rank": "1B",
+          "farm": "Las Margaritas Veintiséis",
+          "score": 91.06,
+          "weightLb": 231.49,
+          "bidPerLb": 110.5,
+          "totalValue": 25579.65,
+          "buyer": "Yusen Commercial Enterprise （Shanghai）LTD.Co"
+        },
+        {
+          "category": "Experimental",
+          "rank": "2",
+          "farm": "El Entronque",
+          "score": 90.72,
+          "weightLb": 760.59,
+          "bidPerLb": 44,
+          "totalValue": 33465.96,
+          "buyer": "NOZY COFFEE / TYSONS&COMPANY"
+        },
+        {
+          "category": "Experimental",
+          "rank": "3",
+          "farm": "Don Darío – Hacienda San Isidro Labrador",
+          "score": 90.22,
+          "weightLb": 529.1,
+          "bidPerLb": 50.3,
+          "totalValue": 26613.73,
+          "buyer": "SENSEL COFFEE"
+        },
+        {
+          "category": "Experimental",
+          "rank": "4",
+          "farm": "La Isabela",
+          "score": 90,
+          "weightLb": 595.24,
+          "bidPerLb": 41.2,
+          "totalValue": 24523.89,
+          "buyer": "INSEASON音季咖啡, 武汉铜山里 TONG.SHANLI COFFEE, 昆山亿政咖啡有限公司, 金领结咖啡, 夯萃咖啡HANGCUI, JAUNATIS CAFFE"
+        },
+        {
+          "category": "Experimental",
+          "rank": "5",
+          "farm": "La Esmeralda A&M",
+          "score": 89.44,
+          "weightLb": 529.1,
+          "bidPerLb": 32.5,
+          "totalValue": 17195.75,
+          "buyer": "Taresso Artisan Coffee Roasters"
+        },
+        {
+          "category": "Experimental",
+          "rank": "6",
+          "farm": "Emanuel",
+          "score": 89.39,
+          "weightLb": 892.86,
+          "bidPerLb": 24.2,
+          "totalValue": 21607.21,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Experimental",
+          "rank": "7",
+          "farm": "Finca Voo",
+          "score": 89.39,
+          "weightLb": 496.04,
+          "bidPerLb": 37.1,
+          "totalValue": 18403.08,
+          "buyer": "L.TONE"
+        },
+        {
+          "category": "Experimental",
+          "rank": "8",
+          "farm": "Finca Los Robles",
+          "score": 89.22,
+          "weightLb": 529.1,
+          "bidPerLb": 21.9,
+          "totalValue": 11587.29,
+          "buyer": "Savaya Coffee LLC"
+        },
+        {
+          "category": "Experimental",
+          "rank": "9",
+          "farm": "El Cola Roja",
+          "score": 89.11,
+          "weightLb": 529.1,
+          "bidPerLb": 36.1,
+          "totalValue": 19100.51,
+          "buyer": "IngenuityCoffee印格咖啡"
+        },
+        {
+          "category": "Experimental",
+          "rank": "10",
+          "farm": "Mystic Hills",
+          "score": 88.83,
+          "weightLb": 562.17,
+          "bidPerLb": 27.1,
+          "totalValue": 15234.81,
+          "buyer": "Fadie Sasaguri Roastery Corporation"
+        }
+      ]
+    },
+    {
+      "slug": "honduras-2026",
+      "country": "Honduras",
+      "year": 2026,
+      "lots": [
+        {
+          "category": "Honduras Traditional",
+          "rank": "1",
+          "farm": "La Cascada",
+          "score": 89.82,
+          "weightLb": 562.18,
+          "bidPerLb": 37.9,
+          "totalValue": 21306.62,
+          "buyer": "GLITCH COFFEE & ROASTERS by Marukai"
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "2",
+          "farm": "El Manantial",
+          "score": 89.71,
+          "weightLb": 628.32,
+          "bidPerLb": 28.2,
+          "totalValue": 17718.62,
+          "buyer": "Huracan Coffee (Sviezia Kava)"
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "3",
+          "farm": "Las Acacias",
+          "score": 89.61,
+          "weightLb": 661.39,
+          "bidPerLb": 25.6,
+          "totalValue": 16931.58,
+          "buyer": "Massimo Coffee, Times Club"
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "4",
+          "farm": "La Peña",
+          "score": 88.25,
+          "weightLb": 496.04,
+          "bidPerLb": 29,
+          "totalValue": 14385.16,
+          "buyer": "HoneyCoffee (Izaki Coffee Co. Ltd)"
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "5",
+          "farm": "La Casa",
+          "score": 87.96,
+          "weightLb": 1091.29,
+          "bidPerLb": 26.1,
+          "totalValue": 28482.67,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "6",
+          "farm": "El Cutal",
+          "score": 87.96,
+          "weightLb": 727.52,
+          "bidPerLb": 23.6,
+          "totalValue": 17169.47,
+          "buyer": "Sarutahiko Coffee Inc."
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "7",
+          "farm": "Los Primos",
+          "score": 87.93,
+          "weightLb": 661.39,
+          "bidPerLb": 25.1,
+          "totalValue": 16600.89,
+          "buyer": "Kasai Coffee Co., Ltd."
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "8",
+          "farm": "El Guayabo",
+          "score": 87.82,
+          "weightLb": 826.73,
+          "bidPerLb": 23.7,
+          "totalValue": 19593.5,
+          "buyer": "COFFEE COUNTY"
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "9",
+          "farm": "Finca Dariela",
+          "score": 87.79,
+          "weightLb": 1322.77,
+          "bidPerLb": 21.8,
+          "totalValue": 28836.39,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Honduras Traditional",
+          "rank": "10",
+          "farm": "Patepluma",
+          "score": 87.46,
+          "weightLb": 529.11,
+          "bidPerLb": 21.9,
+          "totalValue": 11587.51,
+          "buyer": "honu加藤珈琲店株式会社"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "1",
+          "farm": "La Loma",
+          "score": 89.14,
+          "weightLb": 529.11,
+          "bidPerLb": 28.4,
+          "totalValue": 15026.72,
+          "buyer": "Spirit Origin , SHRUB COFFEE , TWO HANDS FULL (Indonesia), CHG, Coffee Project, Alchemist, Dethlefsen & Balk GmbH, L’escargot."
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "2",
+          "farm": "Don Miguel",
+          "score": 89.04,
+          "weightLb": 496.04,
+          "bidPerLb": 25,
+          "totalValue": 12401,
+          "buyer": "Decameron Coffee十日谈"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "3",
+          "farm": "El Plan",
+          "score": 88.21,
+          "weightLb": 462.97,
+          "bidPerLb": 25.2,
+          "totalValue": 11666.84,
+          "buyer": "Idle Hands Roasting Co., Songdo Coffee, Snow Beans Coffee"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "4",
+          "farm": "Androz (Lote Amanda)",
+          "score": 88.18,
+          "weightLb": 562.18,
+          "bidPerLb": 39.2,
+          "totalValue": 22037.46,
+          "buyer": "Black Knight"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "5",
+          "farm": "El Rubi",
+          "score": 87.82,
+          "weightLb": 694.46,
+          "bidPerLb": 25.1,
+          "totalValue": 17430.95,
+          "buyer": "AROUND TRADING, LOOK At The Barista, GICHI BREW COMPANY, AG COFFEE"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "6",
+          "farm": "El Laurel",
+          "score": 87.68,
+          "weightLb": 529.11,
+          "bidPerLb": 20,
+          "totalValue": 10582.2,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "7",
+          "farm": "Finca Etel",
+          "score": 87.68,
+          "weightLb": 562.18,
+          "bidPerLb": 22.1,
+          "totalValue": 12424.18,
+          "buyer": "Espresso Americano"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "8",
+          "farm": "La Cascada",
+          "score": 87.61,
+          "weightLb": 595.25,
+          "bidPerLb": 32.6,
+          "totalValue": 19405.15,
+          "buyer": "ORO ROASTERS"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "9",
+          "farm": "Liquidambar",
+          "score": 87.57,
+          "weightLb": 628.32,
+          "bidPerLb": 20.65,
+          "totalValue": 12974.81,
+          "buyer": "1895 by Lavazza"
+        },
+        {
+          "category": "Parainema Catracha",
+          "rank": "10",
+          "farm": "Los Romero",
+          "score": 87.5,
+          "weightLb": 760.59,
+          "bidPerLb": 19.6,
+          "totalValue": 14907.56,
+          "buyer": "Pure Coffee"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "1A",
+          "farm": "El Pimporro",
+          "score": 90.5,
+          "weightLb": 297.62,
+          "bidPerLb": 89,
+          "totalValue": 26488.18,
+          "buyer": "Coffee Me Up (Korea), Coffee Therapy (Thailand), Lotus Lab, HAEWOL Coffee (Korea), Shyghost coffeelab, Citric meets Malic"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "1B",
+          "farm": "El Pimporro",
+          "score": 90.5,
+          "weightLb": 264.55,
+          "bidPerLb": 90,
+          "totalValue": 23809.5,
+          "buyer": "咖威Cooway, Inseason音季咖啡, 尽力而为咖啡, KENO BREW, 红硕咖啡, 福咖儿咖啡l, CD喜迪咖啡, 夯萃咖啡HANGCUI"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "2",
+          "farm": "La Salsa",
+          "score": 90.46,
+          "weightLb": 529.11,
+          "bidPerLb": 75.2,
+          "totalValue": 39789.07,
+          "buyer": "Canasto Coffee Co. for 不精品咖啡协会, Terraform Coffee, Coffee Me Up (Korea), Cypher Urban Roastery"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "3",
+          "farm": "El Pino",
+          "score": 90.39,
+          "weightLb": 396.83,
+          "bidPerLb": 84.6,
+          "totalValue": 33571.82,
+          "buyer": "咖威Cooway, Inseason音季咖啡, 福咖儿咖啡, KENO BREW"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "4",
+          "farm": "La Virginias",
+          "score": 88.54,
+          "weightLb": 429.9,
+          "bidPerLb": 41.3,
+          "totalValue": 17754.87,
+          "buyer": "Prodigal Coffee"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "5",
+          "farm": "El Mango",
+          "score": 88.25,
+          "weightLb": 661.39,
+          "bidPerLb": 26.2,
+          "totalValue": 17328.42,
+          "buyer": "Taith Coffee LTD"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "6",
+          "farm": "Finca Baide",
+          "score": 88.11,
+          "weightLb": 661.39,
+          "bidPerLb": 29.25,
+          "totalValue": 19345.66,
+          "buyer": "IngenuityCoffee印格咖啡 for Amber Coffee琥珀咖啡"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "7",
+          "farm": "El Zapote",
+          "score": 88.04,
+          "weightLb": 496.04,
+          "bidPerLb": 40.7,
+          "totalValue": 20188.83,
+          "buyer": "Ecofarm Coffee(China) for CaptainGeorge, nam·é coffee roaster, 武汉铜山里 TONG.SHANLI COFFEE, 陆光咖啡 Luguangcafe, Cupps Coffee, meow coffee猫叔叔"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "8",
+          "farm": "El Limo",
+          "score": 87.82,
+          "weightLb": 529.11,
+          "bidPerLb": 32.6,
+          "totalValue": 17248.99,
+          "buyer": "Passenger, Tandem, Sey"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "9",
+          "farm": "Naranjito 2",
+          "score": 87.5,
+          "weightLb": 562.18,
+          "bidPerLb": 30.2,
+          "totalValue": 16977.84,
+          "buyer": "The Espresso Lab"
+        },
+        {
+          "category": "Honduras Exotic",
+          "rank": "10",
+          "farm": "Los Manzanos",
+          "score": 87.46,
+          "weightLb": 628.32,
+          "bidPerLb": 27.5,
+          "totalValue": 17278.8,
+          "buyer": "Brew92 Cafe & Roastery"
+        }
+      ]
+    },
+    {
+      "slug": "guatemala-2026",
+      "country": "Guatemala",
+      "year": 2026,
+      "lots": [
+        {
+          "category": "Exotic Washed",
+          "rank": "1A",
+          "farm": "Las Macadamias",
+          "score": 90.77,
+          "weightLb": 259.8,
+          "bidPerLb": 83,
+          "totalValue": 21563.4,
+          "buyer": "Coffee Me Up (Korea), Coffee Therapy (Thailand), TWO HANDS FULL (Indonesia), Linking Coffee(Taiwan) for 樂波波珈琲 Le BoBo Coffee, HAEWOL Coffee (Korea)"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "1B",
+          "farm": "Las Macadamias",
+          "score": 90.77,
+          "weightLb": 259.8,
+          "bidPerLb": 82,
+          "totalValue": 21303.6,
+          "buyer": "WAVY COFFEE ROASTERS , GLITCH COFFEE & ROASTERS"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "1C",
+          "farm": "Las Macadamias",
+          "score": 90.77,
+          "weightLb": 33.1,
+          "bidPerLb": 135.6,
+          "totalValue": 4488.36,
+          "buyer": "No Doubt Coffee, COFFEE PLACE"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "2",
+          "farm": "El Morito",
+          "score": 90.75,
+          "weightLb": 529.4,
+          "bidPerLb": 40.1,
+          "totalValue": 21228.94,
+          "buyer": "MOMOS COFFEE, Linking Coffee, Malic Coffee, BLACKUPCOFFEE, HEBECOFFEE, LEICHTCOFFEE"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "3",
+          "farm": "El Socorro",
+          "score": 90.57,
+          "weightLb": 593.3,
+          "bidPerLb": 36,
+          "totalValue": 21358.8,
+          "buyer": "TWO HANDS FULL (Indonesia), Coffee Me Up (Korea), CYPHER URBAN ROASTERY – UAE, Citric meets Malic (Vietnam), SHRUB COFFEE (Japan), Instinct Roastery, Tatido Coffee Roasters, 12 ONZAS (Guatemala)"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "4",
+          "farm": "Montaña Helada",
+          "score": 88.73,
+          "weightLb": 517.2,
+          "bidPerLb": 25.3,
+          "totalValue": 13085.16,
+          "buyer": "SonneCAD Coffee Roaster & 16g x 阔也啡艇1699, A Basic Coffee Production"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "5",
+          "farm": "La Fortuna",
+          "score": 87.91,
+          "weightLb": 659.2,
+          "bidPerLb": 25,
+          "totalValue": 16480,
+          "buyer": "Linking Coffee (Taiwan), 樂波波珈琲 Le BoBo Coffee, 匠豆咖啡 Craft Bean Coffee, Kay Wu, WaWoo Coffee Taiwan, Coffee Me Up (Korea), 12 ONZAS (Guatemala), Coffeestopover, 步昂咖啡 Buon Caffe. Justin Coffee JC咖啡"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "6",
+          "farm": "Finca Los Manantiales",
+          "score": 87.86,
+          "weightLb": 569.9,
+          "bidPerLb": 25.1,
+          "totalValue": 14304.49,
+          "buyer": "Sarutahiko Coffee Inc."
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "7",
+          "farm": "Plan De La Vega",
+          "score": 87.79,
+          "weightLb": 542.6,
+          "bidPerLb": 30.3,
+          "totalValue": 16440.78,
+          "buyer": "ECOM Japan Limited for NOZY COFFEE, TRIBE, Japan Roasters Community"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "8",
+          "farm": "Vista Hermosa",
+          "score": 87.75,
+          "weightLb": 664.2,
+          "bidPerLb": 25,
+          "totalValue": 16605,
+          "buyer": "Pure Coffee"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "9",
+          "farm": "Rosma",
+          "score": 87.71,
+          "weightLb": 544.6,
+          "bidPerLb": 25.6,
+          "totalValue": 13941.76,
+          "buyer": "Linking Coffee (Taiwan), MOMOS COFFEE, FUGO CAFFÉ, Coffee Wingman Taipei, Coffee Me Up (Korea), Black Up Coffee"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "10",
+          "farm": "La Gran Manzana",
+          "score": 87.46,
+          "weightLb": 471.6,
+          "bidPerLb": 34.1,
+          "totalValue": 16081.56,
+          "buyer": "ECOM Japan Limited for NOZY COFFEE, REC COFFEE, 3 CEDARS COFFEE"
+        },
+        {
+          "category": "Exotic Washed",
+          "rank": "11",
+          "farm": "Villaure",
+          "score": 87.04,
+          "weightLb": 613.5,
+          "bidPerLb": 25.1,
+          "totalValue": 15398.85,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "1A",
+          "farm": "El Injerto I",
+          "score": 91.86,
+          "weightLb": 219.3,
+          "bidPerLb": 161.3,
+          "totalValue": 35373.09,
+          "buyer": "Enwan Coffee"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "1B",
+          "farm": "El Injerto I",
+          "score": 91.86,
+          "weightLb": 219.3,
+          "bidPerLb": 161.1,
+          "totalValue": 35329.23,
+          "buyer": "Enwan Coffee"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "1C",
+          "farm": "El Injerto I",
+          "score": 91.86,
+          "weightLb": 33.1,
+          "bidPerLb": 449.1,
+          "totalValue": 14865.21,
+          "buyer": "Enwan Coffee"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "2",
+          "farm": "Cascada Encantada",
+          "score": 90.2,
+          "weightLb": 469.5,
+          "bidPerLb": 42.6,
+          "totalValue": 20000.7,
+          "buyer": "30 Wet Company"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "3",
+          "farm": "Rincón Del Café",
+          "score": 89.14,
+          "weightLb": 735.2,
+          "bidPerLb": 27.2,
+          "totalValue": 19997.44,
+          "buyer": "Dongsuh Foods Corporation"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "4",
+          "farm": "Rio Dorado",
+          "score": 87.66,
+          "weightLb": 704.8,
+          "bidPerLb": 41.1,
+          "totalValue": 28967.28,
+          "buyer": "CAMEL COFFEE CO.,LTD. (KALDI COFFEE FARM)"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "5",
+          "farm": "Morelia",
+          "score": 87.54,
+          "weightLb": 755.5,
+          "bidPerLb": 40.2,
+          "totalValue": 30371.1,
+          "buyer": "CYPHER URBAN ROASTERY – UAE, HUNAHPU COFFEE ROASTERS, Hunahpu Coffee Roasters to the winners list of Guatemala"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "6",
+          "farm": "Holanda",
+          "score": 87.46,
+          "weightLb": 441.1,
+          "bidPerLb": 26.9,
+          "totalValue": 11865.59,
+          "buyer": "MOGIPOGROUND (Saerin Co., Ltd.), JM COFFEE (KOREA & JAPAN), Comansa"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "7",
+          "farm": "Pampojila Y Anexos",
+          "score": 87.36,
+          "weightLb": 927.9,
+          "bidPerLb": 23.5,
+          "totalValue": 21805.65,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "8",
+          "farm": "Santa Felisa",
+          "score": 87.3,
+          "weightLb": 579.1,
+          "bidPerLb": 37.5,
+          "totalValue": 21716.25,
+          "buyer": "Black Knight"
+        },
+        {
+          "category": "Exotic Natural and Honey",
+          "rank": "9",
+          "farm": "La Muñeca",
+          "score": 87.16,
+          "weightLb": 463.5,
+          "bidPerLb": 30.3,
+          "totalValue": 14044.05,
+          "buyer": "TRUTH ROASTERY"
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "1A",
+          "farm": "Los Aguacatones",
+          "score": 89.86,
+          "weightLb": 764,
+          "bidPerLb": 35.1,
+          "totalValue": 26816.4,
+          "buyer": "NOZY COFFEE / TYSONS&COMPANY"
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "1B",
+          "farm": "Los Aguacatones",
+          "score": 89.86,
+          "weightLb": 33.1,
+          "bidPerLb": 90.1,
+          "totalValue": 2982.31,
+          "buyer": "Backdoor Coffee Roasting Co"
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "2",
+          "farm": "Terrazas Y Anexos",
+          "score": 89.46,
+          "weightLb": 495.9,
+          "bidPerLb": 23.6,
+          "totalValue": 11703.24,
+          "buyer": "Linking Coffe for WaWoo Coffee Taiwan"
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "3",
+          "farm": "La Rosita",
+          "score": 88.93,
+          "weightLb": 578,
+          "bidPerLb": 25.1,
+          "totalValue": 14507.8,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "4",
+          "farm": "El Paraiso Del Café",
+          "score": 87.96,
+          "weightLb": 709.9,
+          "bidPerLb": 24.1,
+          "totalValue": 17108.59,
+          "buyer": "Fadie Sasaguri Roastery Corporation"
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "5",
+          "farm": "Bella Elizabeth",
+          "score": 87.68,
+          "weightLb": 841.7,
+          "bidPerLb": 23.3,
+          "totalValue": 19611.61,
+          "buyer": "honu加藤珈琲店株式会社"
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "6",
+          "farm": "Granito De Oro",
+          "score": 87.11,
+          "weightLb": 659.2,
+          "bidPerLb": 21.7,
+          "totalValue": 14304.64,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "One Of A Kind",
+          "rank": "7",
+          "farm": "Vinaros",
+          "score": 87.05,
+          "weightLb": 603.4,
+          "bidPerLb": 22.2,
+          "totalValue": 13395.48,
+          "buyer": "El Gran Cafe, S.A."
+        },
+        {
+          "category": "Washed",
+          "rank": "NW",
+          "farm": "Santa Irene",
+          "score": 86.82,
+          "weightLb": 1090.17,
+          "bidPerLb": 10.4,
+          "totalValue": 11337.77,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Washed",
+          "rank": "NW",
+          "farm": "Teanzul",
+          "score": 86.04,
+          "weightLb": 1128.71,
+          "bidPerLb": 8.2,
+          "totalValue": 9255.42,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Washed",
+          "rank": "NW",
+          "farm": "Flor Del Cafe",
+          "score": 85.64,
+          "weightLb": 572.98,
+          "bidPerLb": 11.1,
+          "totalValue": 6360.08,
+          "buyer": "No Doubt Coffee, COFFEE PLACE, HYANGMISA, coffee Temple"
+        },
+        {
+          "category": "Natural & Honey",
+          "rank": "NW",
+          "farm": "Peña Blanca",
+          "score": 85.36,
+          "weightLb": 547.62,
+          "bidPerLb": 11.2,
+          "totalValue": 6133.34,
+          "buyer": "New Heights Coffee Roasters"
+        }
+      ]
+    },
+    {
+      "slug": "mexico-2026",
+      "country": "Mexico",
+      "year": 2026,
+      "lots": [
+        {
+          "category": "Washed",
+          "rank": "1A",
+          "farm": "Huehuetepan",
+          "score": 91.22,
+          "weightLb": 132.28,
+          "bidPerLb": 88.7,
+          "totalValue": 11733.24,
+          "buyer": "YN & Snow Beans Coffee"
+        },
+        {
+          "category": "Washed",
+          "rank": "1B",
+          "farm": "Huehuetepan",
+          "score": 91.22,
+          "weightLb": 132.28,
+          "bidPerLb": 88.7,
+          "totalValue": 11733.24,
+          "buyer": "YN Coffee for CoffeeGalaxy; Allyouwant."
+        },
+        {
+          "category": "Washed",
+          "rank": "2",
+          "farm": "Finca Pocitos",
+          "score": 90.67,
+          "weightLb": 264.55,
+          "bidPerLb": 41,
+          "totalValue": 10846.55,
+          "buyer": "Coffee Me Up (Korea), MONARCH HAUS, LO+US, Shyghost coffeelab, Coffee Therapy (Thailand)"
+        },
+        {
+          "category": "Washed",
+          "rank": "3",
+          "farm": "El milagro",
+          "score": 90.25,
+          "weightLb": 396.83,
+          "bidPerLb": 27.2,
+          "totalValue": 10793.78,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Washed",
+          "rank": "4",
+          "farm": "El limonar",
+          "score": 88.56,
+          "weightLb": 462.97,
+          "bidPerLb": 36.1,
+          "totalValue": 16713.22,
+          "buyer": "Ecofarm Coffee(China) for 0566 珈琲製作所/0566 COFFEE"
+        },
+        {
+          "category": "Washed",
+          "rank": "5",
+          "farm": "La Teja",
+          "score": 88.44,
+          "weightLb": 132.28,
+          "bidPerLb": 30,
+          "totalValue": 3968.4,
+          "buyer": "NOZY COFFEE / TYSONS&COMPANY"
+        },
+        {
+          "category": "Washed",
+          "rank": "6",
+          "farm": "Rancho El Separo",
+          "score": 88.39,
+          "weightLb": 264.55,
+          "bidPerLb": 22.1,
+          "totalValue": 5846.56,
+          "buyer": "SHRUB COFFEE by Marukai"
+        },
+        {
+          "category": "Washed",
+          "rank": "7",
+          "farm": "Finca Santa Cruz",
+          "score": 88.08,
+          "weightLb": 462.97,
+          "bidPerLb": 30.1,
+          "totalValue": 13935.4,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Washed",
+          "rank": "8",
+          "farm": "Finca Ocoxotla",
+          "score": 88,
+          "weightLb": 661.39,
+          "bidPerLb": 20,
+          "totalValue": 13227.8,
+          "buyer": "honu加藤珈琲店株式会社"
+        },
+        {
+          "category": "Washed",
+          "rank": "9",
+          "farm": "Ohuapan",
+          "score": 87.75,
+          "weightLb": 330.69,
+          "bidPerLb": 25,
+          "totalValue": 8267.25,
+          "buyer": "New Heights Coffee Roasters"
+        },
+        {
+          "category": "Washed",
+          "rank": "10",
+          "farm": "Finca Las Canelas",
+          "score": 87.67,
+          "weightLb": 264.55,
+          "bidPerLb": 22,
+          "totalValue": 5820.1,
+          "buyer": "Terarosa (Haksan Co.Ltd)"
+        },
+        {
+          "category": "Washed",
+          "rank": "11",
+          "farm": "Café 14 – Finca Don Gustavo",
+          "score": 87.44,
+          "weightLb": 727.53,
+          "bidPerLb": 20,
+          "totalValue": 14550.6,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "1A",
+          "farm": "El Izote",
+          "score": 91.03,
+          "weightLb": 198.42,
+          "bidPerLb": 62,
+          "totalValue": 12302.04,
+          "buyer": "COWORKCOFFEE"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "1B",
+          "farm": "El Izote",
+          "score": 91.03,
+          "weightLb": 132.28,
+          "bidPerLb": 63.1,
+          "totalValue": 8346.87,
+          "buyer": "Orsir Coffee Taiwan"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "2",
+          "farm": "Rancho Viejo",
+          "score": 91,
+          "weightLb": 462.97,
+          "bidPerLb": 40.2,
+          "totalValue": 18611.39,
+          "buyer": "SUPREMO COFFEE"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "3",
+          "farm": "Rancho zacatlami",
+          "score": 89.78,
+          "weightLb": 264.55,
+          "bidPerLb": 32.1,
+          "totalValue": 8492.06,
+          "buyer": "Elio Coffee"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "4",
+          "farm": "Finca Los Sueños",
+          "score": 88.44,
+          "weightLb": 264.55,
+          "bidPerLb": 24,
+          "totalValue": 6349.2,
+          "buyer": "CAFE ESTELAR"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "5",
+          "farm": "Los Chuchos",
+          "score": 88.31,
+          "weightLb": 330.69,
+          "bidPerLb": 21,
+          "totalValue": 6944.49,
+          "buyer": "Exportadora de café california"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "6",
+          "farm": "El Mirador",
+          "score": 88.28,
+          "weightLb": 132.28,
+          "bidPerLb": 29.3,
+          "totalValue": 3875.8,
+          "buyer": "Gold Star Coffee"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "7",
+          "farm": "Fatima",
+          "score": 88,
+          "weightLb": 330.69,
+          "bidPerLb": 31.1,
+          "totalValue": 10284.46,
+          "buyer": "Black Knight"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "8",
+          "farm": "Finca La Luz",
+          "score": 87.92,
+          "weightLb": 330.69,
+          "bidPerLb": 30.3,
+          "totalValue": 10019.91,
+          "buyer": "MI Coffee Corporation"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "9",
+          "farm": "Finca Santa Cruz",
+          "score": 87.69,
+          "weightLb": 661.39,
+          "bidPerLb": 28.1,
+          "totalValue": 18585.06,
+          "buyer": "Dabov Specialty Coffee, GeeCoffee, Coffee Me Up (Korea)"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "10",
+          "farm": "Finca Pocitos",
+          "score": 87.67,
+          "weightLb": 264.55,
+          "bidPerLb": 26.4,
+          "totalValue": 6984.12,
+          "buyer": "Black Sip Coffee Roasters"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "11",
+          "farm": "La Llorona",
+          "score": 87.64,
+          "weightLb": 198.42,
+          "bidPerLb": 25,
+          "totalValue": 4960.5,
+          "buyer": "New Heights Coffee Roasters"
+        },
+        {
+          "category": "Experimental",
+          "rank": "1A",
+          "farm": "Finca Santa Cruz",
+          "score": 91.33,
+          "weightLb": 330.69,
+          "bidPerLb": 94.7,
+          "totalValue": 31316.34,
+          "buyer": "CAMEL COFFEE CO.,LTD. (KALDI COFFEE FARM)"
+        },
+        {
+          "category": "Experimental",
+          "rank": "1B",
+          "farm": "Finca Santa Cruz",
+          "score": 91.33,
+          "weightLb": 330.69,
+          "bidPerLb": 94.5,
+          "totalValue": 31250.21,
+          "buyer": "CAMEL COFFEE CO.,LTD. (KALDI COFFEE FARM)"
+        },
+        {
+          "category": "Experimental",
+          "rank": "2",
+          "farm": "Huehuetepan",
+          "score": 90.22,
+          "weightLb": 198.42,
+          "bidPerLb": 39.8,
+          "totalValue": 7897.12,
+          "buyer": "ECOM Japan Limited for TSUJIMOTO COFFEE"
+        },
+        {
+          "category": "Experimental",
+          "rank": "3",
+          "farm": "El Deseo",
+          "score": 90.03,
+          "weightLb": 330.69,
+          "bidPerLb": 24.5,
+          "totalValue": 8101.91,
+          "buyer": "Savaya Coffee LLC"
+        },
+        {
+          "category": "Experimental",
+          "rank": "4",
+          "farm": "Finca El Encino",
+          "score": 88,
+          "weightLb": 330.69,
+          "bidPerLb": 26.1,
+          "totalValue": 8631.01,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "Experimental",
+          "rank": "5",
+          "farm": "Puente Nuevo",
+          "score": 87.78,
+          "weightLb": 462.97,
+          "bidPerLb": 20.2,
+          "totalValue": 9351.99,
+          "buyer": "Friedhats Coffee"
+        },
+        {
+          "category": "Experimental",
+          "rank": "6",
+          "farm": "Los Sueños",
+          "score": 87.72,
+          "weightLb": 330.69,
+          "bidPerLb": 19.7,
+          "totalValue": 6514.59,
+          "buyer": "Calufe"
+        },
+        {
+          "category": "Experimental",
+          "rank": "7",
+          "farm": "Finca Los Naranjos",
+          "score": 87.64,
+          "weightLb": 264.55,
+          "bidPerLb": 20,
+          "totalValue": 5291,
+          "buyer": "Mercanta The Coffee Hunters, Alchemist Singapore, and Dark Woods"
+        },
+        {
+          "category": "Experimental",
+          "rank": "8",
+          "farm": "Peña Blanca",
+          "score": 87.11,
+          "weightLb": 330.69,
+          "bidPerLb": 20,
+          "totalValue": 6613.8,
+          "buyer": "Pure Coffee"
+        },
+        {
+          "category": "Washed",
+          "rank": "NW",
+          "farm": "Rancho la Proveedora S de RL de CV.",
+          "score": 87.39,
+          "weightLb": 198.42,
+          "bidPerLb": 12.7,
+          "totalValue": 2519.93,
+          "buyer": "COFFEE COUNTY"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "NW",
+          "farm": "Alba",
+          "score": 87.6,
+          "weightLb": 330.69,
+          "bidPerLb": 12.1,
+          "totalValue": 4001.35,
+          "buyer": "Calufe"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "NW",
+          "farm": "Tlaixco",
+          "score": 87.4,
+          "weightLb": 132.28,
+          "bidPerLb": 14.2,
+          "totalValue": 1878.38,
+          "buyer": "The Quantum Crack Coffee Roasters"
+        },
+        {
+          "category": "Natural and Honey",
+          "rank": "NW",
+          "farm": "El Fresno",
+          "score": 87.4,
+          "weightLb": 264.55,
+          "bidPerLb": 11.7,
+          "totalValue": 3095.24,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "Experimental",
+          "rank": "NW",
+          "farm": "Finca Parak",
+          "score": 86.7,
+          "weightLb": 264.55,
+          "bidPerLb": 13.5,
+          "totalValue": 3571.43,
+          "buyer": "ORO ROASTERS"
+        }
+      ]
+    },
+    {
+      "slug": "thailand-2026",
+      "country": "Thailand",
+      "year": 2026,
+      "lots": [
+        {
+          "category": "General",
+          "rank": "1A",
+          "farm": "Coffee De Hmong Bio Farm",
+          "score": 90.5,
+          "weightLb": 99.21,
+          "bidPerLb": 91.6,
+          "totalValue": 9087.64,
+          "buyer": "Black Sea Corp"
+        },
+        {
+          "category": "General",
+          "rank": "1B",
+          "farm": "Coffee De Hmong Bio Farm",
+          "score": 90.5,
+          "weightLb": 97,
+          "bidPerLb": 88.98,
+          "totalValue": 8631.06,
+          "buyer": "Paper Swan"
+        },
+        {
+          "category": "General",
+          "rank": "2",
+          "farm": "Natee Coffee Estate",
+          "score": 89.77,
+          "weightLb": 198.41,
+          "bidPerLb": 58.2,
+          "totalValue": 11547.46,
+          "buyer": "Black Knight"
+        },
+        {
+          "category": "General",
+          "rank": "3",
+          "farm": "Ching family farm",
+          "score": 89.69,
+          "weightLb": 667.99,
+          "bidPerLb": 25.6,
+          "totalValue": 17100.54,
+          "buyer": "TWO HANDS FULL (Indonesia), Dethlefsen & Balk GmbH, Tatido Coffee Roasters, Citric meets Malic, Pyroast, A Roastworks, SHRUB COFFEE (Japan), Taiwan Coffee Laboratory, Best Roaster Co."
+        },
+        {
+          "category": "General",
+          "rank": "4",
+          "farm": "Doi Tung Development Project",
+          "score": 89.54,
+          "weightLb": 178.57,
+          "bidPerLb": 58,
+          "totalValue": 10357.06,
+          "buyer": "ORO ROASTERS"
+        },
+        {
+          "category": "General",
+          "rank": "5",
+          "farm": "Sopa’s estate",
+          "score": 89.15,
+          "weightLb": 190.26,
+          "bidPerLb": 33.5,
+          "totalValue": 6373.71,
+          "buyer": "Coffee Project NY, The Espresso Lab, Goodboybob Coffee Roaster"
+        },
+        {
+          "category": "General",
+          "rank": "6",
+          "farm": "Saenchai estate",
+          "score": 89.04,
+          "weightLb": 186.73,
+          "bidPerLb": 56.3,
+          "totalValue": 10512.9,
+          "buyer": "Taith Coffee LTD"
+        },
+        {
+          "category": "General",
+          "rank": "7",
+          "farm": "Pakakayo family",
+          "score": 88.42,
+          "weightLb": 308.64,
+          "bidPerLb": 21.6,
+          "totalValue": 6666.62,
+          "buyer": "Pure Coffee"
+        },
+        {
+          "category": "General",
+          "rank": "8",
+          "farm": "Ma Gor Loe Coffee Farm",
+          "score": 88.08,
+          "weightLb": 159.61,
+          "bidPerLb": 40,
+          "totalValue": 6384.4,
+          "buyer": "Black Sea Corp"
+        },
+        {
+          "category": "General",
+          "rank": "9",
+          "farm": "Phupha Estate",
+          "score": 87.92,
+          "weightLb": 186.51,
+          "bidPerLb": 26.1,
+          "totalValue": 4867.91,
+          "buyer": "Ashlawn Farm Coffee"
+        },
+        {
+          "category": "General",
+          "rank": "10",
+          "farm": "Natee Coffee Estate",
+          "score": 87.92,
+          "weightLb": 220.9,
+          "bidPerLb": 30.1,
+          "totalValue": 6649.09,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "General",
+          "rank": "11",
+          "farm": "Praiwan farm",
+          "score": 87.77,
+          "weightLb": 213.18,
+          "bidPerLb": 23.5,
+          "totalValue": 5009.73,
+          "buyer": "Black Sea Corp"
+        },
+        {
+          "category": "General",
+          "rank": "12",
+          "farm": "Typica rakpa",
+          "score": 87.77,
+          "weightLb": 187.39,
+          "bidPerLb": 36.2,
+          "totalValue": 6783.52,
+          "buyer": "Black Knight"
+        },
+        {
+          "category": "General",
+          "rank": "13",
+          "farm": "Pakakayo family",
+          "score": 87.73,
+          "weightLb": 275.58,
+          "bidPerLb": 25.1,
+          "totalValue": 6917.06,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "General",
+          "rank": "14",
+          "farm": "Soft Coffee",
+          "score": 87.62,
+          "weightLb": 521.39,
+          "bidPerLb": 15.3,
+          "totalValue": 7977.27,
+          "buyer": "Lower Northern Sultan & Friends (Thailand)"
+        },
+        {
+          "category": "General",
+          "rank": "15",
+          "farm": "Sopa’s estate",
+          "score": 87.62,
+          "weightLb": 207.23,
+          "bidPerLb": 26.8,
+          "totalValue": 5553.76,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "General",
+          "rank": "16",
+          "farm": "Livespecialty",
+          "score": 87.5,
+          "weightLb": 198.41,
+          "bidPerLb": 24,
+          "totalValue": 4761.84,
+          "buyer": "Sulalat"
+        },
+        {
+          "category": "General",
+          "rank": "17",
+          "farm": "Soft Coffee",
+          "score": 87.5,
+          "weightLb": 446.43,
+          "bidPerLb": 15.5,
+          "totalValue": 6919.67,
+          "buyer": "MI Coffee Corporation"
+        },
+        {
+          "category": "General",
+          "rank": "18",
+          "farm": "Omkoi Coffee bean Piangphiang",
+          "score": 87.42,
+          "weightLb": 189.6,
+          "bidPerLb": 22.2,
+          "totalValue": 4209.12,
+          "buyer": "Alchemist"
+        },
+        {
+          "category": "General",
+          "rank": "19",
+          "farm": "Coffee de Hmong Bio Farm",
+          "score": 87.42,
+          "weightLb": 207.45,
+          "bidPerLb": 39.1,
+          "totalValue": 8111.3,
+          "buyer": "Paper Swan"
+        },
+        {
+          "category": "General",
+          "rank": "20",
+          "farm": "OonBox Family",
+          "score": 87.38,
+          "weightLb": 207.23,
+          "bidPerLb": 21,
+          "totalValue": 4351.83,
+          "buyer": "Paper Swan"
+        },
+        {
+          "category": "General",
+          "rank": "21",
+          "farm": "Wan na farm",
+          "score": 87.23,
+          "weightLb": 198.41,
+          "bidPerLb": 21.6,
+          "totalValue": 4285.66,
+          "buyer": "CORE LAB CO.,LTD"
+        },
+        {
+          "category": "General",
+          "rank": "22",
+          "farm": "Lica Coffee Estate",
+          "score": 87.19,
+          "weightLb": 296.52,
+          "bidPerLb": 22,
+          "totalValue": 6523.44,
+          "buyer": "Anna Coffee Roasters"
+        },
+        {
+          "category": "General",
+          "rank": "23",
+          "farm": "Chatchai Organic Coffee Farming",
+          "score": 87.19,
+          "weightLb": 225.97,
+          "bidPerLb": 20.5,
+          "totalValue": 4632.39,
+          "buyer": "Wataru & Co., Ltd."
+        },
+        {
+          "category": "General",
+          "rank": "24",
+          "farm": "Nai Kong Coffee",
+          "score": 87,
+          "weightLb": 198.41,
+          "bidPerLb": 25.1,
+          "totalValue": 4980.09,
+          "buyer": "ORO ROASTERS"
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Sahairoen Farm",
+          "score": 86.88,
+          "weightLb": 216.05,
+          "bidPerLb": 13.5,
+          "totalValue": 2916.68,
+          "buyer": "ALLRIDE – coffee roaster"
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Saenchai estate",
+          "score": 86.88,
+          "weightLb": 240.74,
+          "bidPerLb": 11,
+          "totalValue": 2648.14,
+          "buyer": "Sulalat"
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Monthira",
+          "score": 86.85,
+          "weightLb": 192.9,
+          "bidPerLb": 10.1,
+          "totalValue": 1948.29,
+          "buyer": "Ryans Coffee Roasters"
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Phupha Estate",
+          "score": 86.85,
+          "weightLb": 251.32,
+          "bidPerLb": 12.5,
+          "totalValue": 3141.5,
+          "buyer": "Savaya Coffee LLC"
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Sumio",
+          "score": 86.62,
+          "weightLb": 195.11,
+          "bidPerLb": 7.1,
+          "totalValue": 1385.28,
+          "buyer": "神山國際 Terra Imports LTD, With Coffee Roaster, Mature Coffee Roaster, ALink Coffee."
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Abo-Kor Coffee&farm",
+          "score": 86.62,
+          "weightLb": 186.29,
+          "bidPerLb": 9.2,
+          "totalValue": 1713.87,
+          "buyer": "Ashlawn Farm Coffee"
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Pakakayo family Huai wai",
+          "score": 86.46,
+          "weightLb": 205.47,
+          "bidPerLb": 7.1,
+          "totalValue": 1458.84,
+          "buyer": "Brew92 Cafe & Roastery"
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Yosniyom coffee farm",
+          "score": 86.04,
+          "weightLb": 203.04,
+          "bidPerLb": 11.1,
+          "totalValue": 2253.74,
+          "buyer": "神山國際 Terra Imports LTD, 豆生農業科技 Bean Born Agriculture Technology Inc, YOHAKU COFFEE ROASTERS."
+        },
+        {
+          "category": "General",
+          "rank": "NW",
+          "farm": "Phu Chee Deun Coffee",
+          "score": 86.04,
+          "weightLb": 335.76,
+          "bidPerLb": 6.6,
+          "totalValue": 2216.02,
+          "buyer": "神山國際 Terra Imports LTD."
+        }
+      ]
+    },
+    {
+      "slug": "indonesia-2026",
+      "country": "Indonesia",
+      "year": 2026,
+      "lots": []
+    },
+    {
+      "slug": "brazil-2026",
+      "country": "Brazil",
+      "year": 2026,
+      "lots": []
+    },
+    {
+      "slug": "peru-2026",
+      "country": "Peru",
+      "year": 2026,
+      "lots": []
+    }
+  ]
 }
