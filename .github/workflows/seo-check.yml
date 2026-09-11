@@ -1,0 +1,27 @@
+name: SEO pages check
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "data/**"
+      - "scripts/**"
+      - ".github/workflows/seo-check.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Build generated market pages
+        run: node scripts/build-market-pages.mjs
+      - name: Verify SEO page graph
+        run: node scripts/verify-market-pages.mjs
