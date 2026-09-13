@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-12T08:59:46.241Z",
+  "generatedAt": "2026-09-13T09:58:19.192Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
@@ -35,34 +35,34 @@
   "weather": [
     {
       "region": "Minas Gerais (Brazil, Arabica)",
-      "rain7d": 72.4,
-      "normal7d": 2.3,
-      "pctOfNormal": 3148,
-      "minForecast7d": 12.6,
-      "alerts": []
-    },
-    {
-      "region": "Huila (Colombia, Arabica)",
-      "rain7d": 25,
-      "normal7d": 14.9,
-      "pctOfNormal": 168,
-      "minForecast7d": 16,
-      "alerts": []
-    },
-    {
-      "region": "Sidama/Gedeo (Ethiopia, Arabica)",
-      "rain7d": 26.6,
-      "normal7d": 45.5,
-      "pctOfNormal": 58,
+      "rain7d": 66.4,
+      "normal7d": 0.7,
+      "pctOfNormal": 9486,
       "minForecast7d": 13.6,
       "alerts": []
     },
     {
+      "region": "Huila (Colombia, Arabica)",
+      "rain7d": 21.8,
+      "normal7d": 14.5,
+      "pctOfNormal": 150,
+      "minForecast7d": 16.5,
+      "alerts": []
+    },
+    {
+      "region": "Sidama/Gedeo (Ethiopia, Arabica)",
+      "rain7d": 32.5,
+      "normal7d": 46.3,
+      "pctOfNormal": 70,
+      "minForecast7d": 13.1,
+      "alerts": []
+    },
+    {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 110.8,
-      "normal7d": 88.1,
-      "pctOfNormal": 126,
-      "minForecast7d": 20.9,
+      "rain7d": 110.6,
+      "normal7d": 84,
+      "pctOfNormal": 132,
+      "minForecast7d": 20.2,
       "alerts": []
     }
   ],
