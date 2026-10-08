@@ -388,6 +388,11 @@ footer{border-top:1px solid var(--line);padding:44px 0 60px;font-size:14px;color
         <p class="independence" data-i18n="foot.ind">Independent analysis: BeanMonitor does not sell coffee.</p>
       </div>
       <div class="foot-links">
+        <a href="/coffee-market-brief/">Market brief</a>
+        <a href="/coffee-prices/">Coffee prices</a>
+        <a href="/coffee-weather/">Origin weather</a>
+        <a href="/cup-of-excellence/">Cup of Excellence</a>
+        <a href="/methodology/">Methodology</a>
         <a href="mailto:hello@beanmonitor.coffee" data-i18n="foot.contact">Contact</a>
         <span data-i18n="foot.soon">Soon: matcha · cacao</span>
         <span data-i18n="foot.docs">llms.txt · API docs · status — with Team</span>
@@ -744,7 +749,12 @@ function setLang(code){
   document.querySelectorAll('[data-setlang]').forEach(function(b){
     b.setAttribute('aria-current', b.getAttribute('data-setlang') === code ? 'true' : 'false');
   });
-  try { history.replaceState(null, '', '?lang=' + code); } catch(e){}
+  try { localStorage.setItem('beanmonitor-language', code); } catch(e){}
+  try {
+    var url = new URL(location.href);
+    url.searchParams.delete('lang');
+    history.replaceState(null, '', url.pathname + url.search + url.hash);
+  } catch(e){}
 }
 
 (function(){
@@ -755,10 +765,10 @@ function setLang(code){
   var params = new URLSearchParams(location.search);
   var want = params.get('lang');
   if (!want){
-    var nav = (navigator.language || 'en').slice(0,2).toLowerCase();
-    if (I18N[nav]) want = nav;
+    try { want = localStorage.getItem('beanmonitor-language'); } catch(e){}
   }
   if (want && (want === 'en' || I18N[want])) setLang(want);
+  else if (params.has('lang')) setLang('en');
 })();
 
 document.getElementById('year').textContent = new Date().getFullYear();
