@@ -109,6 +109,13 @@ for (const loc of locs) {
   const url = new URL(loc);
   const local = url.pathname === "/" ? "index.html" : `${url.pathname.slice(1)}index.html`;
   assert(await exists(local), `sitemap target missing: ${local}`);
+  const html = await text(local);
+  const canonicals = [...html.matchAll(/<link rel="canonical" href="([^"]+)">/g)];
+  assert(canonicals.length === 1 && canonicals[0][1] === loc, `canonical does not match sitemap: ${local}`);
+}
+
+for (const path of ['/coffee-market-brief/', '/coffee-prices/', '/coffee-weather/', '/cup-of-excellence/', '/methodology/']) {
+  assert(homepage.includes(`href="${path}"`), `homepage discovery link missing: ${path}`);
 }
 
 console.log(`SEO V2 verification passed: ${locs.length} sitemap URLs checked.`);

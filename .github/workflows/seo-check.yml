@@ -25,3 +25,5 @@ jobs:
         run: node scripts/build-market-pages.mjs
       - name: Verify SEO page graph
         run: node scripts/verify-market-pages.mjs
+      - name: Verify homepage language canonicalization
+        run: node scripts/verify-home-language.mjs
