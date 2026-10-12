@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-10-11T11:10:55.500Z",
+  "generatedAt": "2026-10-12T12:42:47.788Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
-      "price": 285.15,
-      "changePct24h": -1.35,
-      "change30d": -9.6,
+      "price": 285.85,
+      "changePct24h": -0.38,
+      "change30d": -8.9,
       "high52": 422.7,
       "low52": 244.4,
       "percentile52w": 14,
@@ -13,56 +13,56 @@
     },
     "cocoa": {
       "symbol": "CC=F",
-      "price": 5671,
-      "changePct24h": 0.11,
-      "change30d": -4.9,
+      "price": 5611,
+      "changePct24h": -0.95,
+      "change30d": -5.4,
       "high52": 6650,
       "low52": 2798,
-      "percentile52w": 68,
+      "percentile52w": 64,
       "currency": "USD"
     },
     "usdbrl": {
       "symbol": "BRL=X",
       "price": 4.98,
-      "changePct24h": -0.85,
-      "change30d": -2.4,
+      "changePct24h": -0.76,
+      "change30d": -2.3,
       "high52": 5.59,
       "low52": 4.91,
-      "percentile52w": 3,
+      "percentile52w": 6,
       "currency": "BRL"
     }
   },
   "weather": [
     {
       "region": "Minas Gerais (Brazil, Arabica)",
-      "rain7d": 38.3,
-      "normal7d": 25.1,
-      "pctOfNormal": 153,
-      "minForecast7d": 16.8,
+      "rain7d": 30.3,
+      "normal7d": 26.9,
+      "pctOfNormal": 113,
+      "minForecast7d": 15.8,
       "alerts": []
     },
     {
       "region": "Huila (Colombia, Arabica)",
-      "rain7d": 33.9,
-      "normal7d": 26,
-      "pctOfNormal": 130,
-      "minForecast7d": 16.8,
+      "rain7d": 35.4,
+      "normal7d": 25.1,
+      "pctOfNormal": 141,
+      "minForecast7d": 16.3,
       "alerts": []
     },
     {
       "region": "Sidama/Gedeo (Ethiopia, Arabica)",
-      "rain7d": 35.5,
-      "normal7d": 68.7,
-      "pctOfNormal": 52,
-      "minForecast7d": 13.6,
+      "rain7d": 39.3,
+      "normal7d": 61.8,
+      "pctOfNormal": 64,
+      "minForecast7d": 12.7,
       "alerts": []
     },
     {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 49.1,
-      "normal7d": 56.4,
-      "pctOfNormal": 87,
-      "minForecast7d": 20.1,
+      "rain7d": 42.5,
+      "normal7d": 54.1,
+      "pctOfNormal": 79,
+      "minForecast7d": 20,
       "alerts": []
     }
   ],
