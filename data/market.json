@@ -1,21 +1,21 @@
 {
-  "generatedAt": "2026-10-18T09:18:59.732Z",
+  "generatedAt": "2026-10-19T10:29:11.346Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
-      "price": 305.55,
-      "changePct24h": 3.65,
+      "price": 309.85,
+      "changePct24h": 1.39,
       "change30d": 5.2,
       "high52": 422.7,
       "low52": 244.4,
-      "percentile52w": 45,
+      "percentile52w": 49,
       "currency": "USX"
     },
     "cocoa": {
       "symbol": "CC=F",
-      "price": 5686,
-      "changePct24h": -2.49,
-      "change30d": -1.5,
+      "price": 5674,
+      "changePct24h": 0.51,
+      "change30d": 6.5,
       "high52": 6650,
       "low52": 2798,
       "percentile52w": 69,
@@ -28,41 +28,41 @@
       "change30d": -1,
       "high52": 5.59,
       "low52": 4.91,
-      "percentile52w": 18,
+      "percentile52w": 19,
       "currency": "BRL"
     }
   },
   "weather": [
     {
       "region": "Minas Gerais (Brazil, Arabica)",
-      "rain7d": 64.7,
-      "normal7d": 15.8,
-      "pctOfNormal": 409,
-      "minForecast7d": 13.1,
+      "rain7d": 61.9,
+      "normal7d": 17.5,
+      "pctOfNormal": 354,
+      "minForecast7d": 13.5,
       "alerts": []
     },
     {
       "region": "Huila (Colombia, Arabica)",
-      "rain7d": 44.5,
-      "normal7d": 28.7,
-      "pctOfNormal": 155,
-      "minForecast7d": 14.2,
+      "rain7d": 43.3,
+      "normal7d": 31.4,
+      "pctOfNormal": 138,
+      "minForecast7d": 15.2,
       "alerts": []
     },
     {
       "region": "Sidama/Gedeo (Ethiopia, Arabica)",
-      "rain7d": 66.1,
-      "normal7d": 44.7,
+      "rain7d": 62.6,
+      "normal7d": 42.2,
       "pctOfNormal": 148,
-      "minForecast7d": 10.5,
+      "minForecast7d": 10.7,
       "alerts": []
     },
     {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 28,
-      "normal7d": 95.3,
-      "pctOfNormal": 29,
-      "minForecast7d": 18.2,
+      "rain7d": 29.6,
+      "normal7d": 91.5,
+      "pctOfNormal": 32,
+      "minForecast7d": 18.8,
       "alerts": []
     }
   ],
