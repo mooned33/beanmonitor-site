@@ -1,68 +1,68 @@
 {
-  "generatedAt": "2026-10-23T09:43:51.541Z",
+  "generatedAt": "2026-10-24T09:16:53.659Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
-      "price": 310.1,
-      "changePct24h": -0.75,
-      "change30d": 12.6,
+      "price": 306,
+      "changePct24h": -2.06,
+      "change30d": 11.1,
       "high52": 422.7,
       "low52": 244.4,
-      "percentile52w": 49,
+      "percentile52w": 45,
       "currency": "USX"
     },
     "cocoa": {
       "symbol": "CC=F",
-      "price": 5644,
-      "changePct24h": 1.11,
-      "change30d": 1,
+      "price": 5560,
+      "changePct24h": -0.39,
+      "change30d": -0.5,
       "high52": 6650,
       "low52": 2798,
-      "percentile52w": 65,
+      "percentile52w": 61,
       "currency": "USD"
     },
     "usdbrl": {
       "symbol": "BRL=X",
-      "price": 5.03,
-      "changePct24h": 0.2,
-      "change30d": -2.5,
+      "price": 4.97,
+      "changePct24h": -1.68,
+      "change30d": -4.3,
       "high52": 5.59,
       "low52": 4.91,
-      "percentile52w": 14,
+      "percentile52w": 3,
       "currency": "BRL"
     }
   },
   "weather": [
     {
       "region": "Minas Gerais (Brazil, Arabica)",
-      "rain7d": 42.1,
-      "normal7d": 28,
-      "pctOfNormal": 150,
-      "minForecast7d": 12.3,
+      "rain7d": 44.7,
+      "normal7d": 27.6,
+      "pctOfNormal": 162,
+      "minForecast7d": 11.6,
       "alerts": []
     },
     {
       "region": "Huila (Colombia, Arabica)",
-      "rain7d": 34.7,
-      "normal7d": 31.2,
-      "pctOfNormal": 111,
-      "minForecast7d": 15.4,
+      "rain7d": 26.6,
+      "normal7d": 37.5,
+      "pctOfNormal": 71,
+      "minForecast7d": 16.3,
       "alerts": []
     },
     {
       "region": "Sidama/Gedeo (Ethiopia, Arabica)",
-      "rain7d": 12.3,
-      "normal7d": 43.2,
-      "pctOfNormal": 28,
-      "minForecast7d": 11.5,
+      "rain7d": 7.9,
+      "normal7d": 44,
+      "pctOfNormal": 18,
+      "minForecast7d": 11.7,
       "alerts": []
     },
     {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 29.5,
-      "normal7d": 58.6,
-      "pctOfNormal": 50,
-      "minForecast7d": 17.9,
+      "rain7d": 29.2,
+      "normal7d": 42.5,
+      "pctOfNormal": 69,
+      "minForecast7d": 17.6,
       "alerts": []
     }
   ],
@@ -1893,7 +1893,7 @@
           "weightLb": 462.97,
           "bidPerLb": 40.2,
           "totalValue": 18611.39,
-          "buyer": "SUPREMO COFFEE"
+          "buyer": "SUPREMO COFFEE, SAVAYA – ARIZONA"
         },
         {
           "category": "Natural and Honey",
