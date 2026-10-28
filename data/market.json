@@ -1,68 +1,68 @@
 {
-  "generatedAt": "2026-10-27T10:11:16.898Z",
+  "generatedAt": "2026-10-28T10:57:07.333Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
-      "price": 298.9,
-      "changePct24h": -0.68,
-      "change30d": 3.5,
+      "price": 287.2,
+      "changePct24h": -2.23,
+      "change30d": -0.8,
       "high52": 422.7,
       "low52": 244.4,
-      "percentile52w": 36,
+      "percentile52w": 15,
       "currency": "USX"
     },
     "cocoa": {
       "symbol": "CC=F",
-      "price": 5530,
-      "changePct24h": 0.73,
-      "change30d": -1.1,
+      "price": 5491,
+      "changePct24h": -1.54,
+      "change30d": 1.5,
       "high52": 6650,
       "low52": 2798,
-      "percentile52w": 61,
+      "percentile52w": 60,
       "currency": "USD"
     },
     "usdbrl": {
       "symbol": "BRL=X",
-      "price": 5.41,
-      "changePct24h": 9.05,
-      "change30d": 4.2,
+      "price": 5.35,
+      "changePct24h": -0.39,
+      "change30d": 2.5,
       "high52": 5.59,
       "low52": 4.91,
-      "percentile52w": 92,
+      "percentile52w": 82,
       "currency": "BRL"
     }
   },
   "weather": [
     {
       "region": "Minas Gerais (Brazil, Arabica)",
-      "rain7d": 48.4,
-      "normal7d": 26.6,
-      "pctOfNormal": 182,
-      "minForecast7d": 12.9,
+      "rain7d": 52.3,
+      "normal7d": 23.2,
+      "pctOfNormal": 225,
+      "minForecast7d": 15.3,
       "alerts": []
     },
     {
       "region": "Huila (Colombia, Arabica)",
-      "rain7d": 32.8,
-      "normal7d": 34.6,
-      "pctOfNormal": 95,
-      "minForecast7d": 15.5,
+      "rain7d": 25,
+      "normal7d": 31,
+      "pctOfNormal": 81,
+      "minForecast7d": 16,
       "alerts": []
     },
     {
       "region": "Sidama/Gedeo (Ethiopia, Arabica)",
-      "rain7d": 24.4,
-      "normal7d": 43.2,
-      "pctOfNormal": 56,
-      "minForecast7d": 9.6,
+      "rain7d": 32.4,
+      "normal7d": 42.2,
+      "pctOfNormal": 77,
+      "minForecast7d": 9.1,
       "alerts": []
     },
     {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 14.8,
-      "normal7d": 38.6,
-      "pctOfNormal": 38,
-      "minForecast7d": 19.3,
+      "rain7d": 6.3,
+      "normal7d": 43,
+      "pctOfNormal": 15,
+      "minForecast7d": 19.8,
       "alerts": []
     }
   ],
