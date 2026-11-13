@@ -1,32 +1,32 @@
 {
-  "generatedAt": "2026-11-12T13:30:38.706Z",
+  "generatedAt": "2026-11-13T12:50:36.049Z",
   "prices": {
     "arabica": {
       "symbol": "KC=F",
-      "price": 271.4,
-      "changePct24h": 0.89,
-      "change30d": -8.9,
+      "price": 276.6,
+      "changePct24h": -1.28,
+      "change30d": -6.2,
       "high52": 415.35,
       "low52": 244.4,
-      "percentile52w": 7,
+      "percentile52w": 12,
       "currency": "USX"
     },
     "cocoa": {
       "symbol": "CC=F",
-      "price": 5064,
-      "changePct24h": 3.2,
-      "change30d": -11.7,
+      "price": 5267,
+      "changePct24h": 3.97,
+      "change30d": -9.7,
       "high52": 6650,
       "low52": 2798,
-      "percentile52w": 48,
+      "percentile52w": 55,
       "currency": "USD"
     },
     "usdbrl": {
       "symbol": "BRL=X",
-      "price": 5.61,
-      "changePct24h": 0.49,
-      "change30d": 11.5,
-      "high52": 5.61,
+      "price": 5.65,
+      "changePct24h": 1.34,
+      "change30d": 12.2,
+      "high52": 5.65,
       "low52": 4.91,
       "percentile52w": 100,
       "currency": "BRL"
@@ -35,34 +35,34 @@
   "weather": [
     {
       "region": "Minas Gerais (Brazil, Arabica)",
-      "rain7d": 33.5,
-      "normal7d": 36.1,
-      "pctOfNormal": 93,
-      "minForecast7d": 16.2,
+      "rain7d": 33.8,
+      "normal7d": 36.6,
+      "pctOfNormal": 92,
+      "minForecast7d": 16.5,
       "alerts": []
     },
     {
       "region": "Huila (Colombia, Arabica)",
-      "rain7d": 31.9,
-      "normal7d": 31.5,
-      "pctOfNormal": 101,
-      "minForecast7d": 16.2,
+      "rain7d": 28.9,
+      "normal7d": 35,
+      "pctOfNormal": 83,
+      "minForecast7d": 15.2,
       "alerts": []
     },
     {
       "region": "Sidama/Gedeo (Ethiopia, Arabica)",
-      "rain7d": 40.8,
-      "normal7d": 21.8,
-      "pctOfNormal": 187,
-      "minForecast7d": 10.5,
+      "rain7d": 60.5,
+      "normal7d": 21.7,
+      "pctOfNormal": 279,
+      "minForecast7d": 10.3,
       "alerts": []
     },
     {
       "region": "Dak Lak (Vietnam, Robusta)",
-      "rain7d": 14.6,
-      "normal7d": 61.9,
-      "pctOfNormal": 24,
-      "minForecast7d": 19,
+      "rain7d": 17.7,
+      "normal7d": 63.9,
+      "pctOfNormal": 28,
+      "minForecast7d": 19.3,
       "alerts": []
     }
   ],
